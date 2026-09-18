@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+    
+    <header class="header-header">
+        <div class="container">
+            <a href="#" class="logo-text">cyber</a>
+
+            <form class="search-form" action="/search" method="GET">
+                <button type="submit" class="search-btn">
+                    <img src="./img/lupa.png" alt="Search icon" class="search-icon-img">
+                </button>
+                <input type="text" name="query" class="search-input" placeholder="Search">
+            </form>
+
+            <nav class="menu">
+                <ul>
+                    <li><a href="main.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </nav>
+
+            <div class="menu-images">
+                <a href="#"><img src="./img/Favorites.png" alt="Wishlist"></a>
+                <a href="#"><img src="./img/korzina.png" alt="Cart"></a>
+                <a href="#"><img src="./img/User.png" alt="User Profile"></a>
+            </div>
+        </div>
+    </header>
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог смартфонов</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+ 
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="#">Home</a>
+            <span>›</span>
+            <a href="#">Catalog</a>
+            <span>›</span>
+            <span class="current">Smartphones</span>
+        </div>
+    </div>
+
+  
+    <section class="catalog">
+        <div class="container catalog-wrapper">
+
+            <aside class="filters">
+
+              
+                <div class="filter-block">
+                    <div class="filter-title">
+                        <span>Brand</span>
+                        <span class="arrow">▲</span>
+                    </div>
+
+                    <div class="filter-search">
+                        <input type="text" placeholder="Search">
+                        <button><img src="./img/lupa.png" alt=""></button>
+                    </div>
+
+                    
+                    <ul class="filter-list">
+                        <li><label><input type="checkbox" checked> Apple <span>110</span></label></li>
+                        <li><label><input type="checkbox"> Samsung <span>125</span></label></li>
+                        <li><label><input type="checkbox"> Xiaomi <span>68</span></label></li>
+                        <li><label><input type="checkbox"> Poco <span>44</span></label></li>
+                        <li><label><input type="checkbox"> OPPO <span>36</span></label></li>
+                        <li><label><input type="checkbox"> Honor <span>10</span></label></li>
+                        <li><label><input type="checkbox"> Motorola <span>34</span></label></li>
+                        <li><label><input type="checkbox"> Nokia <span>22</span></label></li>
+                        <li><label><input type="checkbox"> Realme <span>35</span></label></li>
+                    </ul>
+                </div>
+
+                <div class="filter-block">
+                    <div class="filter-title">
+                        <span>Battery capacity</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                </div>
+
+                <div class="filter-block">
+                    <div class="filter-title">
+                        <span>Screen type</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                </div>
+
+             
+                <div class="filter-block">
+                    <div class="filter-title">
+                        <span>Screen diagonal</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                </div>
+
+             
+                <div class="filter-block">
+                    <div class="filter-title">
+                        <span>Protection class</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                </div>
+
+                
+                <div class="filter-block">
+                    <div class="filter-title">
+                        <span>Built-in memory</span>
+                        <span class="arrow">▼</span>
+                    </div>
+                </div>
+
+            </aside>
+
+            
+            <main class="products">
+
+               
+                <div class="products-top">
+                    <p>Selected Products: <strong>85</strong></p>
+                    <select class="sort-select">
+                        <option>By rating</option>
+                    </select>
+                </div>
+
+                
+                <div class="products-grid">
+
+                   
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/11.png" alt="iPhone 14 Pro">
+                        <h3>Apple iPhone 14 Pro 512GB Gold (MQ233)</h3>
+                        <p class="price">$1437</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+                    
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/12.png" alt="iPhone 11">
+                        <h3>Apple iPhone 11 128GB White (MQ233)</h3>
+                        <p class="price">$510</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+                    
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/13.png" alt="iPhone 11">
+                        <h3>Apple iPhone 11 128GB White (MQ233)</h3>
+                        <p class="price">$550</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+                   
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/14.png" alt="iPhone 14 Pro">
+                        <h3>Apple iPhone 14 Pro 1TB Gold (MQ2V3)</h3>
+                        <p class="price">$1499</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+                   
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/15.png" alt="iPhone 14 Pro">
+                        <h3>Apple iPhone 14 Pro 1TB Gold (MQ2V3)</h3>
+                        <p class="price">$1399</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/16.png" alt="iPhone 14 Pro">
+                        <h3>Apple iPhone 14 Pro 128GB Deep Purple (MQ0G3)</h3>
+                        <p class="price">$1600</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+                    
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/17.png" alt="iPhone 13 mini">
+                        <h3>Apple iPhone 13 mini 128GB Pink (MLK23)</h3>
+                        <p class="price">$850</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/18.png" alt="iPhone 14 Pro">
+                        <h3>Apple iPhone 14 Pro 256GB Space Black (MQ0T3)</h3>
+                        <p class="price">$1399</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+                    
+                    <div class="product-card">
+                        <button class="like-btn"><img src="./img/Favorites.png"></button>
+                        <img src="./img/19.png" alt="iPhone 14 Pro">
+                        <h3>Apple iPhone 14 Pro 256GB Silver (MQ103)</h3>
+                        <p class="price">$1399</p>
+                        <button class="buy-btn">Buy Now</button>
+                    </div>
+
+                </div>
+
+                <div class="pagination">
+                    <button class="page-arrow">‹</button>
+                    <button class="page-num active">1</button>
+                    <button class="page-num">2</button>
+                    <button class="page-num">3</button>
+                    <span class="dots">...</span>
+                    <button class="page-num">12</button>
+                    <button class="page-arrow">›</button>
+                </div>
+
+            </main>
+
+        </div>
+    </section>
+
+     <footer>
+        <div class="container footer-content">
+            <article class="cuber">
+                <h2>cyber</h2>
+                <p>We are a residential interior design firm located in <br> Portland. Our boutique-studio offers more
+                    than</p>
+            </article>
+            <article class="services">
+                <h2>Services</h2>
+                <ul>
+                    <li><a href="#">Bonus program</a></li>
+                    <li><a href="#">Gift cards</a></li>
+                    <li><a href="#">Credit and payment</a></li>
+                    <li><a href="#">Service contracts</a></li>
+                    <li><a href="#">Non-cash account</a></li>
+                    <li><a href="#">Payment</a></li>
+                </ul>
+            </article>
+            <article class="Assistance">
+                <h2>Assistance to the buyer</h2>
+                <ul>
+                    <li><a href="#">Find an order</a></li>
+                    <li><a href="#">Terms of delivery</a></li>
+                    <li><a href="#">Exchange and return of goods</a></li>
+                    <li><a href="#">Guarantee</a></li>
+                    <li><a href="#">Frequently asked questions</a></li>
+                    <li><a href="#">Terms of use of the site</a></li>
+                </ul>
+            </article>
+            <article class="icon">
+                <div class="icon-1"><a href="#"><img src="./img/Twitter icone.png" alt="Twitter"></a></div>
+                <div class="icon-2"><a href="#"><img src="./img/Facebook icone.png" alt="Facebook"></a></div>
+                <div class="icon-3"><a href="#"><img src="./img/Tiktok icone.png" alt="TikTok"></a></div>
+                <div class="icon-4"><a href="#"><img src="./img/Instagram icone.png" alt="Instagram"></a></div>
+            </article>
+        </div>
+    </footer>
+
+</body>
+</html>
