@@ -1,0 +1,611 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+    color: #000;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+/* ============================================================
+   ШАПКА
+   ============================================================ */
+.header-header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.header-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -0.5px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search-icon-img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.6;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    color: #333;
+}
+
+.menu ul {
+    display: flex;
+    gap: 40px;
+}
+
+.menu a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: #000;
+}
+
+.menu-images {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.menu-images img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.menu-images img:hover {
+    opacity: 1;
+}
+
+/* Бургер (скрыт на десктопе) */
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.burger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+}
+
+/* =========================
+   Основная секция
+========================= */
+.shopping-cart {
+    width: 100%;
+    padding: 90px 0;
+}
+
+.shopping-cart .container {
+    width: calc(100% - 320px);
+    max-width: 1440px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 430px;
+    gap: 48px;
+    align-items: start;
+}
+
+/* =========================
+   Левая часть — товары
+========================= */
+.cart-products {
+    width: 100%;
+    min-width: 0;
+}
+
+.cart-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 35px;
+}
+
+/* Одна карточка товара */
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 143px;
+    padding: 20px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Изображение товара */
+.cart-item img {
+    width: 60px;
+    height: 75px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+/* Название и артикул */
+.product-info {
+    flex: 1;
+    min-width: 90px;
+}
+
+.product-info h3 {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 6px;
+}
+
+.product-info p {
+    font-size: 11px;
+    color: #333;
+}
+
+/* =========================
+   Количество товаров
+========================= */
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.quantity button {
+    padding: 3px;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.quantity input {
+    width: 34px;
+    height: 28px;
+    text-align: center;
+    font-size: 13px;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    outline: none;
+    -moz-appearance: textfield;
+}
+
+.quantity input::-webkit-inner-spin-button,
+.quantity input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Цена товара */
+.product-price {
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+/* Удаление товара */
+.remove-item {
+    margin-left: 3px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 22px;
+    font-weight: 300;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* =========================
+   Правая часть — Order Summary
+========================= */
+.order-summary {
+    width: 100%;
+    min-width: 0;
+    padding: 40px 45px;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.02);
+}
+
+.order-summary h2 {
+    margin-bottom: 28px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* =========================
+   Поля ввода
+========================= */
+.summary-form {
+    margin-bottom: 20px;
+}
+
+.summary-form label {
+    display: block;
+    margin-bottom: 7px;
+    color: #777;
+    font-size: 11px;
+}
+
+.summary-form>input {
+    width: 100%;
+    height: 46px;
+    padding: 0 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    outline: none;
+}
+
+.summary-form input::placeholder {
+    color: #aaa;
+    font-size: 11px;
+}
+
+/* Поле бонусной карты */
+.bonus-input {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 46px;
+    padding: 4px 6px 4px 12px;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+}
+
+.bonus-input input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+
+.apply-button {
+    padding: 6px 15px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 11px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.apply-button:hover {
+    background-color: #f5f5f5;
+}
+
+/* =========================
+   Стоимость заказа
+========================= */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 24px;
+    font-size: 13px;
+}
+
+.summary-row span:last-child {
+    white-space: nowrap;
+}
+
+.summary-row.muted {
+    color: #000;
+}
+
+.summary-row.total {
+    margin-top: 25px;
+    color: #000;
+    font-weight: 600;
+}
+
+/* =========================
+   Кнопка Checkout
+========================= */
+.checkout-button {
+    width: 100%;
+    height: 46px;
+    margin-top: 43px;
+    border: none;
+    border-radius: 5px;
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.checkout-button:hover {
+    background-color: #333;
+}
+
+/* =========================
+   Планшеты
+========================= */
+@media (max-width: 1100px) {
+    .shopping-cart .container {
+        width: calc(100% - 80px);
+        grid-template-columns: minmax(0, 1fr) 380px;
+        gap: 32px;
+    }
+
+    .order-summary {
+        padding: 30px;
+    }
+
+    .cart-item {
+        gap: 8px;
+    }
+
+    .cart-item img {
+        width: 48px;
+        height: 65px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .product-price {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   Телефоны
+========================= */
+@media (max-width: 750px) {
+    .shopping-cart {
+        padding: 35px 0;
+    }
+
+    .shopping-cart .container {
+        width: calc(100% - 36px);
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .cart-title {
+        margin-bottom: 20px;
+    }
+
+    .cart-item {
+        gap: 8px;
+        min-height: 120px;
+        padding: 16px 0;
+    }
+
+    .cart-item img {
+        width: 48px;
+        height: 65px;
+    }
+
+    .product-info {
+        min-width: 70px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .product-info p {
+        font-size: 10px;
+    }
+
+    .quantity {
+        gap: 2px;
+    }
+
+    .quantity button {
+        padding: 2px;
+    }
+
+    .quantity input {
+        width: 28px;
+        height: 26px;
+    }
+
+    .product-price {
+        font-size: 13px;
+    }
+
+    .remove-item {
+        font-size: 20px;
+    }
+
+    .order-summary {
+        padding: 25px 20px;
+    }
+
+    .checkout-button {
+        margin-top: 30px;
+    }
+}
+
+/* =========================
+   Очень маленькие экраны
+========================= */
+@media (max-width: 380px) {
+    .shopping-cart .container {
+        width: calc(100% - 24px);
+    }
+
+    .cart-item {
+        gap: 5px;
+    }
+
+    .cart-item img {
+        width: 40px;
+        height: 55px;
+    }
+
+    .product-info h3 {
+        font-size: 11px;
+    }
+
+    .quantity {
+        gap: 1px;
+    }
+
+    .quantity input {
+        width: 25px;
+    }
+
+    .product-price {
+        font-size: 12px;
+    }
+}
+
+.site-footer {
+    background-color: #000000;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 64px;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.footer-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #999999;
+    margin: 0 0 32px 0;
+    max-width: 320px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.social-link {
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.footer-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-list a {
+    font-size: 14px;
+    color: #999999;
+    transition: color 0.2s ease;
+}
+
+.footer-links-list a:hover {
+    color: #ffffff;
+}

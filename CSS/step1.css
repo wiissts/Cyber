@@ -1,0 +1,529 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 0;
+    color: #000;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+/* ============================================================
+   ШАПКА
+   ============================================================ */
+.header-header {
+    background-color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 1px solid #E5E5E5;
+}
+
+.header-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+}
+
+.logo-text {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000;
+    letter-spacing: -0.5px;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 400px;
+    flex-shrink: 0;
+}
+
+.search-btn {
+    background: none;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.search-icon-img {
+    width: 18px;
+    height: 18px;
+    opacity: 0.6;
+}
+
+.search-input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    width: 100%;
+    color: #333;
+}
+
+.menu ul {
+    display: flex;
+    gap: 40px;
+}
+
+.menu a {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: #000;
+}
+
+.menu-images {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.menu-images img {
+    width: 24px;
+    height: 24px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.menu-images img:hover {
+    opacity: 1;
+}
+
+/* Бургер (скрыт на десктопе) */
+.burger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.burger-btn span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #000;
+}
+
+
+/* Основная секция */
+.checkout {
+    width: 100%;
+    background-color: #fff;
+}
+
+.checkout__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 72px 160px 48px;
+}
+
+/* Этапы оформления заказа */
+.checkout-steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 96px;
+}
+
+.checkout-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #b5b5b5;
+}
+
+.checkout-step--active {
+    color: #111;
+}
+
+.step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    font-size: 10px;
+    flex-shrink: 0;
+}
+
+.step-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.step-info span {
+    font-size: 12px;
+}
+
+.step-info strong {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Заголовок */
+.address-section__title {
+    margin: 0 0 27px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Список адресов */
+.address-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.address-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    min-height: 112px;
+    padding: 18px;
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+
+.address-card input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin: 0;
+    accent-color: #000;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.address-card__content {
+    flex: 1;
+    min-width: 0;
+}
+
+.address-card__heading {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 13px;
+}
+
+.address-card__name {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.address-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 19px;
+    padding: 0 7px;
+    border-radius: 3px;
+    background-color: #000;
+    color: #fff;
+    font-size: 10px;
+}
+
+.address-card__content p {
+    margin: 0 0 8px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.address-card__content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Кнопки редактирования и удаления */
+.address-card__actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: 12px;
+    padding-top: 25px;
+}
+
+.address-card__actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.address-card__actions img {
+    display: block;
+    width: 15px;
+    height: 15px;
+    object-fit: contain;
+}
+
+/* Добавление нового адреса */
+.add-address {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    margin-top: 46px;
+    padding: 0;
+    border: none;
+    border-top: 1px dashed #d8d8d8;
+    background: transparent;
+    color: #333;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.add-address__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;
+    margin-top: -11px;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Кнопки Back и Next */
+.checkout-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 19px;
+    margin-top: 49px;
+}
+
+.checkout-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 165px;
+    height: 51px;
+    border: 1px solid #222;
+    border-radius: 5px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.checkout-button--back {
+    background-color: #fff;
+    color: #111;
+}
+
+.checkout-button--back:hover {
+    background-color: #f2f2f2;
+}
+
+.checkout-button--next {
+    background-color: #000;
+    color: #fff;
+}
+
+.checkout-button--next:hover {
+    background-color: #333;
+}
+
+/* Адаптация под планшеты */
+@media (max-width: 1000px) {
+    .checkout__container {
+        padding: 35px 60px 25px;
+    }
+
+    .checkout-steps {
+        margin-bottom: 70px;
+    }
+}
+
+/* Адаптация под телефоны */
+@media (max-width: 600px) {
+    .checkout__container {
+        padding: 25px 20px;
+    }
+
+    .checkout-steps {
+        gap: 15px;
+        margin-bottom: 50px;
+    }
+
+    .checkout-step {
+        gap: 5px;
+    }
+
+    .step-info strong {
+        font-size: 12px;
+    }
+
+    .step-info span {
+        font-size: 10px;
+    }
+
+    .step-icon {
+        width: 17px;
+        height: 17px;
+    }
+
+    .address-section__title {
+        margin-bottom: 20px;
+    }
+
+    .address-card {
+        gap: 10px;
+        padding: 14px 10px;
+    }
+
+    .address-card__content p {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .address-card__actions {
+        gap: 10px;
+        margin-left: 0;
+    }
+
+    .checkout-buttons {
+        gap: 12px;
+        margin-top: 40px;
+    }
+
+    .checkout-button {
+        width: 50%;
+        height: 48px;
+    }
+}
+
+
+
+
+
+
+.site-footer {
+    background-color: #000000;
+    padding: 80px 20px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 64px;
+}
+
+.footer-brand-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.footer-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #999999;
+    margin: 0 0 32px 0;
+    max-width: 320px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.social-link {
+    color: #ffffff;
+    transition: opacity 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-link:hover {
+    opacity: 0.7;
+}
+
+.footer-links-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.column-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 8px;
+    margin-bottom: 24px;
+}
+
+.footer-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-list a {
+    font-size: 14px;
+    color: #999999;
+    transition: color 0.2s ease;
+}
+
+.footer-links-list a:hover {
+    color: #ffffff;
+}
