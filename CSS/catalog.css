@@ -221,8 +221,10 @@ button {
 .filter-list input[type="checkbox"] {
     width: 16px;
     height: 16px;
+    margin: 0;
+    accent-color: #000;
     cursor: pointer;
-    color: #000;
+    flex-shrink: 0;
 }
 
 .filter-list span {
@@ -315,13 +317,20 @@ button {
 }
 
 .buy-btn {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
     background-color: #000;
-    color: #ffffff;
+    color: #fff;
     padding: 10px 30px;
+    border: none;
     border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
-    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .buy-btn:hover {
@@ -362,9 +371,6 @@ button {
     color: #888;
 }
 
-/* ============================================================
-   ПОДВАЛ
-   ============================================================ */
 .site-footer {
     background-color: #000000;
     padding: 80px 20px;
@@ -447,9 +453,6 @@ button {
     color: #ffffff;
 }
 
-/* ============================================================
-   АДАПТИВНОСТЬ
-   ============================================================ */
 @media (max-width: 1024px) {
     .header-header .container {
         gap: 20px;

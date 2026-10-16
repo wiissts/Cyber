@@ -30,9 +30,6 @@ body {
     width: 100%;
 }
 
-/* ============================================================
-   ШАПКА
-   ============================================================ */
 .header-header {
     background-color: #ffffff;
     padding: 20px 0;
@@ -121,7 +118,6 @@ body {
     opacity: 1;
 }
 
-/* Бургер (скрыт на десктопе) */
 .burger-btn {
     display: none;
     background: none;
@@ -138,9 +134,6 @@ body {
     background-color: #000;
 }
 
-/* =========================
-   Основная секция
-========================= */
 .shopping-cart {
     width: 100%;
     padding: 90px 0;
@@ -156,9 +149,6 @@ body {
     align-items: start;
 }
 
-/* =========================
-   Левая часть — товары
-========================= */
 .cart-products {
     width: 100%;
     min-width: 0;
@@ -170,7 +160,6 @@ body {
     margin-bottom: 35px;
 }
 
-/* Одна карточка товара */
 .cart-item {
     display: flex;
     align-items: center;
@@ -184,7 +173,6 @@ body {
     border-bottom: none;
 }
 
-/* Изображение товара */
 .cart-item img {
     width: 60px;
     height: 75px;
@@ -192,7 +180,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Название и артикул */
 .product-info {
     flex: 1;
     min-width: 90px;
@@ -210,9 +197,6 @@ body {
     color: #333;
 }
 
-/* =========================
-   Количество товаров
-========================= */
 .quantity {
     display: flex;
     align-items: center;
@@ -245,7 +229,6 @@ body {
     margin: 0;
 }
 
-/* Цена товара */
 .product-price {
     font-size: 16px;
     font-weight: 600;
@@ -253,7 +236,6 @@ body {
     flex-shrink: 0;
 }
 
-/* Удаление товара */
 .remove-item {
     margin-left: 3px;
     padding: 0;
@@ -266,9 +248,6 @@ body {
     flex-shrink: 0;
 }
 
-/* =========================
-   Правая часть — Order Summary
-========================= */
 .order-summary {
     width: 100%;
     min-width: 0;
@@ -284,9 +263,6 @@ body {
     font-weight: 600;
 }
 
-/* =========================
-   Поля ввода
-========================= */
 .summary-form {
     margin-bottom: 20px;
 }
@@ -312,7 +288,6 @@ body {
     font-size: 11px;
 }
 
-/* Поле бонусной карты */
 .bonus-input {
     display: flex;
     align-items: center;
@@ -345,9 +320,6 @@ body {
     background-color: #f5f5f5;
 }
 
-/* =========================
-   Стоимость заказа
-========================= */
 .summary-row {
     display: flex;
     justify-content: space-between;
@@ -371,9 +343,6 @@ body {
     font-weight: 600;
 }
 
-/* =========================
-   Кнопка Checkout
-========================= */
 .checkout-button {
     width: 100%;
     height: 46px;
@@ -391,9 +360,6 @@ body {
     background-color: #333;
 }
 
-/* =========================
-   Планшеты
-========================= */
 @media (max-width: 1100px) {
     .shopping-cart .container {
         width: calc(100% - 80px);
@@ -423,9 +389,6 @@ body {
     }
 }
 
-/* =========================
-   Телефоны
-========================= */
 @media (max-width: 750px) {
     .shopping-cart {
         padding: 35px 0;
@@ -494,9 +457,7 @@ body {
     }
 }
 
-/* =========================
-   Очень маленькие экраны
-========================= */
+
 @media (max-width: 380px) {
     .shopping-cart .container {
         width: calc(100% - 24px);
@@ -608,4 +569,404 @@ body {
 
 .footer-links-list a:hover {
     color: #ffffff;
+}
+
+@media (max-width: 750px) {
+
+    body {
+        width: 100%;
+        overflow-x: hidden;
+        background: #fff;
+        font-family: 'Inter', sans-serif;
+    }
+
+    .header-header {
+        height: 78px;
+        padding: 0;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .header-header .container {
+        height: 100%;
+        padding: 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-text {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .search-form,
+    .menu,
+    .menu-images {
+        display: none !important;
+    }
+
+    .burger-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        padding: 0;
+        background: transparent;
+    }
+
+    .burger-btn span {
+        width: 22px;
+        height: 2px;
+        background: #29264f;
+    }
+
+    .shopping-cart {
+        padding: 30px 0 35px;
+    }
+
+    .shopping-cart .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0 15px;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+    .cart-products {
+        width: 100%;
+    }
+
+    .cart-title {
+        font-size: 21px;
+        font-weight: 600;
+        margin-bottom: 28px;
+    }
+
+    .cart-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        width: 100%;
+        min-height: 182px;
+        padding: 20px 0;
+
+        border-bottom: 1px solid #dedede;
+    }
+
+    .cart-item:last-child {
+        border-bottom: none;
+    }
+
+    .cart-item img {
+        flex: 0 0 80px;
+        width: 80px;
+        height: 90px;
+        object-fit: contain;
+    }
+
+    .product-info {
+        flex: 1;
+        min-width: 0;
+        align-self: center;
+    }
+
+    .product-info h3 {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.45;
+        margin-bottom: 8px;
+    }
+
+    .product-info p {
+        font-size: 12px;
+        color: #333;
+    }
+
+    .quantity {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        flex-shrink: 0;
+    }
+
+    .quantity button {
+        padding: 3px;
+        font-size: 17px;
+        background: transparent;
+    }
+
+    .quantity input {
+        width: 35px;
+        height: 29px;
+        text-align: center;
+        font-size: 13px;
+        border: 1px solid #eee;
+        border-radius: 3px;
+    }
+
+    .product-price {
+        font-size: 19px;
+        font-weight: 600;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .remove-item {
+        flex-shrink: 0;
+        margin-left: 2px;
+        padding: 0;
+        color: #555;
+        font-size: 23px;
+        font-weight: 300;
+        background: transparent;
+    }
+
+    .order-summary {
+        width: 100%;
+        padding: 42px 13px 48px;
+
+        border: 1px solid #eee;
+        border-radius: 9px;
+        box-shadow: none;
+        background: #fff;
+    }
+
+    .order-summary h2 {
+        font-size: 17px;
+        font-weight: 600;
+        margin-bottom: 27px;
+    }
+
+    .summary-form {
+        margin-bottom: 20px;
+    }
+
+    .summary-form label {
+        display: block;
+        font-size: 12px;
+        color: #777;
+        margin-bottom: 7px;
+    }
+
+    .summary-form>input {
+        width: 100%;
+        height: 49px;
+        padding: 0 13px;
+        border: 1px solid #d5d5d5;
+        border-radius: 6px;
+        font-size: 12px;
+    }
+
+    .summary-form input::placeholder {
+        font-size: 12px;
+        color: #aaa;
+    }
+
+    .bonus-input {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        height: 49px;
+        padding: 4px 6px 4px 12px;
+        border: 1px solid #d5d5d5;
+        border-radius: 6px;
+    }
+
+    .bonus-input input {
+        width: 100%;
+        min-width: 0;
+        height: 100%;
+        font-size: 12px;
+        border: none;
+        outline: none;
+    }
+
+    .apply-button {
+        flex-shrink: 0;
+        padding: 7px 14px;
+        border: 1px solid #222;
+        border-radius: 6px;
+        background: #fff;
+        font-size: 11px;
+    }
+
+    .summary-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+
+        margin-top: 24px;
+        font-size: 14px;
+    }
+
+    .summary-row span:first-child {
+        color: #555;
+    }
+
+    .summary-row span:last-child {
+        color: #111;
+        white-space: nowrap;
+        font-weight: 600;
+    }
+
+    .summary-row.total {
+        margin-top: 25px;
+        font-weight: 600;
+    }
+
+    .summary-row.total span:first-child {
+        color: #111;
+    }
+
+    .checkout-button {
+        display: block;
+        width: 100%;
+        height: 49px;
+        margin-top: 45px;
+
+        border: none;
+        border-radius: 5px;
+        background: #000;
+        color: #fff;
+
+        font-size: 14px;
+    }
+
+    .checkout-button:hover {
+        background: #333;
+    }
+
+
+    .site-footer {
+        width: 100%;
+        padding: 38px 20px 30px;
+        background: #171313;
+        color: #fff;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .footer-brand-column,
+    .footer-links-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .footer-logo {
+        margin-bottom: 18px;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .footer-description {
+        width: 100%;
+        max-width: 290px;
+        margin: 0 auto;
+        color: #aaa;
+        font-size: 12px;
+        line-height: 1.7;
+    }
+
+    .footer-socials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+        margin-top: 25px;
+    }
+
+    .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    .column-title {
+        margin: 0 0 14px;
+        font-size: 14px;
+        font-weight: 600;
+        color: #fff;
+    }
+
+    .footer-links-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .footer-links-list a {
+        color: #aaa;
+        font-size: 12px;
+        line-height: 1.4;
+    }
+}
+
+
+@media (max-width: 380px) {
+
+    .shopping-cart .container {
+        padding: 0 12px;
+    }
+
+    .cart-item {
+        gap: 7px;
+    }
+
+    .cart-item img {
+        flex-basis: 65px;
+        width: 65px;
+        height: 75px;
+    }
+
+    .product-info h3 {
+        font-size: 12px;
+    }
+
+    .product-info p {
+        font-size: 10px;
+    }
+
+    .quantity {
+        gap: 2px;
+    }
+
+    .quantity input {
+        width: 27px;
+        height: 26px;
+    }
+
+    .product-price {
+        font-size: 15px;
+    }
+
+    .remove-item {
+        font-size: 19px;
+    }
+
+    .order-summary {
+        padding-right: 12px;
+        padding-left: 12px;
+    }
+
+    .summary-row {
+        font-size: 12px;
+    }
 }

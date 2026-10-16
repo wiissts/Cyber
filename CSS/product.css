@@ -1,6 +1,4 @@
-/* ============================================================
-   БАЗОВЫЕ СБРОСЫ
-   ============================================================ */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -33,9 +31,6 @@ body {
     width: 100%;
 }
 
-/* ============================================================
-   ШАПКА
-   ============================================================ */
 .header-header {
     background-color: #ffffff;
     padding: 20px 0;
@@ -141,9 +136,6 @@ body {
     background-color: #000;
 }
 
-/* ============================================================
-   ХЛЕБНЫЕ КРОШКИ
-   ============================================================ */
 .breadcrumbs {
     padding: 20px 0;
     font-size: 14px;
@@ -170,9 +162,6 @@ body {
     font-weight: 500;
 }
 
-/* ============================================================
-   КАРТОЧКА ТОВАРА (ВЕРХНЯЯ)
-   ============================================================ */
 .product-card {
     display: flex;
     max-width: 1200px;
@@ -183,7 +172,6 @@ body {
     gap: 60px;
 }
 
-/* Галерея */
 .gallery-container {
     display: flex;
     gap: 20px;
@@ -236,7 +224,6 @@ body {
     object-fit: contain;
 }
 
-/* Правая колонка */
 .product-details {
     flex: 1;
     display: flex;
@@ -275,7 +262,6 @@ body {
     margin-bottom: 12px;
 }
 
-/* Выбор цвета */
 .color-selector {
     display: flex;
     gap: 12px;
@@ -301,7 +287,6 @@ body {
     box-shadow: inset 0 0 0 2px #fff;
 }
 
-/* Выбор памяти */
 .storage-selector {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -329,7 +314,6 @@ body {
     cursor: pointer;
 }
 
-/* Сетка характеристик */
 .specs-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -369,7 +353,6 @@ body {
     line-height: 1.3;
 }
 
-/* Иконки */
 .spec-icon img,
 .badge-icon img {
     width: 20px;
@@ -378,7 +361,6 @@ body {
     display: block;
 }
 
-/* Описание */
 .description-text {
     font-size: 14px;
     color: #475569;
@@ -393,7 +375,6 @@ body {
     cursor: pointer;
 }
 
-/* Кнопки */
 .actions-container {
     display: flex;
     gap: 16px;
@@ -431,7 +412,6 @@ body {
     background: #1e293b;
 }
 
-/* Плашки доставки */
 .info-badges {
     display: flex;
     justify-content: space-between;
@@ -475,9 +455,6 @@ body {
     font-weight: 600;
 }
 
-/* ============================================================
-   СЕКЦИЯ DETAILS
-   ============================================================ */
 .details-section-wrapper {
     background-color: #FAFAFA;
     padding: 60px 20px;
@@ -550,7 +527,6 @@ body {
     line-height: 1.6;
 }
 
-/* Кнопка View More */
 .toggle-container {
     display: flex;
     justify-content: center;
@@ -581,9 +557,6 @@ body {
     transition: transform 0.2s ease;
 }
 
-/* ============================================================
-   СЕКЦИЯ REVIEWS
-   ============================================================ */
 .reviews-section {
     max-width: 800px;
     width: 100%;
@@ -599,7 +572,6 @@ body {
     color: #000000;
 }
 
-/* Блок статистики */
 .rating-summary {
     display: flex;
     gap: 48px;
@@ -636,7 +608,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Прогресс-бары */
 .rating-bars-container {
     flex-grow: 1;
     display: flex;
@@ -678,7 +649,6 @@ body {
     color: #cccccc;
 }
 
-/* Поле ввода комментария */
 .comment-input-container {
     margin-bottom: 40px;
 }
@@ -698,7 +668,6 @@ body {
     color: #cccccc;
 }
 
-/* Отзывы */
 .reviews-list {
     display: flex;
     flex-direction: column;
@@ -770,9 +739,6 @@ body {
     background-color: #eee;
 }
 
-/* ============================================================
-   СЕКЦИЯ RELATED PRODUCTS
-   ============================================================ */
 .related-section {
     max-width: 1120px;
     width: 100%;
@@ -787,7 +753,6 @@ body {
     gap: 16px;
 }
 
-/* Карточка товара в Related */
 .related-card {
     background-color: #f6f6f6;
     border-radius: 8px;
@@ -875,9 +840,6 @@ body {
     background-color: #222222;
 }
 
-/* ============================================================
-   ПОДВАЛ
-   ============================================================ */
 .site-footer {
     background-color: #000000;
     padding: 80px 20px;
@@ -960,9 +922,6 @@ body {
     color: #ffffff;
 }
 
-/* ============================================================
-   АДАПТИВНОСТЬ
-   ============================================================ */
 @media (max-width: 1024px) {
     .header-header .container {
         gap: 20px;
@@ -1069,5 +1028,753 @@ body {
 @media (max-width: 576px) {
     .products-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-size: 12px;
+    }
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .header-header {
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .header-header .container {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+        padding: 0 16px;
+    }
+
+    .logo-text {
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: -0.3px;
+    }
+
+    .search-form,
+    .menu,
+    .menu-images {
+        display: none !important;
+    }
+
+    .burger-btn {
+        display: flex;
+        flex: 0 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        gap: 3px;
+        width: 22px;
+        height: 22px;
+        padding: 2px;
+        background: transparent;
+    }
+
+    .burger-btn span {
+        width: 17px;
+        height: 1.5px;
+    }
+
+    .breadcrumbs {
+        display: none;
+    }
+
+    .product-card {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 16px 16px 24px;
+        gap: 20px;
+        border-radius: 0;
+    }
+
+    .gallery-container {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        min-width: 0;
+        gap: 12px;
+        flex: none;
+    }
+
+    .main-image {
+        order: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 245px;
+        min-height: 0;
+        padding: 0;
+        border-radius: 0;
+        background: #fff;
+    }
+
+    .main-image img {
+        display: block;
+        width: 100%;
+        max-width: 250px;
+        height: 100%;
+        max-height: 245px;
+        object-fit: contain;
+    }
+
+    .thumbnails {
+        order: 2;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        overflow-x: auto;
+        padding: 0 0 2px;
+        scrollbar-width: none;
+    }
+
+    .thumbnails::-webkit-scrollbar {
+        display: none;
+    }
+
+    .thumb {
+        display: flex;
+        flex: 0 0 36px;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 44px;
+        padding: 3px;
+        border: 1px solid #ededed;
+        border-radius: 4px;
+        background: #fff;
+    }
+
+    .thumb img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    /* Название, цена и варианты */
+    .product-details {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        min-width: 0;
+        flex: none;
+    }
+
+    .product-title {
+        margin: 0 0 8px;
+        font-size: 22px;
+        line-height: 1.15;
+        font-weight: 700;
+    }
+
+    .price-container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .current-price {
+        font-size: 20px;
+        line-height: 1.2;
+    }
+
+    .old-price {
+        font-size: 12px;
+    }
+
+    .section-label {
+        margin-bottom: 8px;
+        font-size: 11px;
+    }
+
+    .color-selector {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 16px;
+    }
+
+    .color-option {
+        width: 17px;
+        height: 17px;
+        flex: 0 0 17px;
+    }
+
+    .storage-selector {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+        margin-bottom: 14px;
+    }
+
+    .storage-option {
+        min-width: 0;
+        padding: 9px 2px;
+        border-radius: 5px;
+        font-size: 9px;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    .specs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .spec-box {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 7px;
+        border-radius: 5px;
+    }
+
+    .spec-icon img,
+    .badge-icon img {
+        width: 15px;
+        height: 15px;
+    }
+
+    .spec-info {
+        min-width: 0;
+    }
+
+    .spec-title {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .spec-value {
+        font-size: 9px;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    .description-text {
+        margin-bottom: 14px;
+        font-size: 10px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .more-link {
+        font-size: 10px;
+    }
+
+    .actions-container {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .btn {
+        display: block;
+        width: 100%;
+        min-height: 34px;
+        flex: none;
+        padding: 9px 12px;
+        border-radius: 5px;
+        font-size: 10px;
+        line-height: 1.2;
+    }
+
+    .info-badges {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+        padding-top: 10px;
+        border-top: 1px solid #f1f1f1;
+    }
+
+    .badge-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        min-width: 0;
+        text-align: center;
+    }
+
+    .badge-icon {
+        width: 28px;
+        height: 28px;
+        border-radius: 5px;
+    }
+
+    .badge-label,
+    .badge-value {
+        font-size: 8px;
+        line-height: 1.25;
+    }
+
+    .details-section-wrapper {
+        display: block;
+        width: 100%;
+        padding: 12px 12px;
+        background: #f7f7f7;
+    }
+
+    .details-card {
+        width: 100%;
+        max-width: none;
+        padding: 18px 14px;
+        border-radius: 5px;
+        box-shadow: none;
+        background: #fff;
+    }
+
+    .details-title {
+        margin-bottom: 12px;
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    .details-description {
+        margin-bottom: 18px;
+        font-size: 9px;
+        line-height: 1.55;
+        text-align: left;
+    }
+
+    .specs-group {
+        margin-bottom: 18px;
+    }
+
+    .group-title {
+        margin-top: 16px;
+        margin-bottom: 8px;
+        font-size: 12px;
+    }
+
+    .spec-row {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 8px 0;
+        font-size: 9px;
+        line-height: 1.35;
+    }
+
+    .spec-row.align-top {
+        align-items: flex-start;
+    }
+
+    .spec-label {
+        flex: 1 1 50%;
+        min-width: 0;
+    }
+
+    .spec-row > .spec-value {
+        flex: 1 1 50%;
+        min-width: 0;
+        font-size: 9px;
+        text-align: right;
+        overflow-wrap: anywhere;
+    }
+
+    .text-right {
+        line-height: 1.45;
+    }
+
+    .toggle-container {
+        margin-top: 18px;
+    }
+
+    .view-more-btn {
+        justify-content: center;
+        width: 100%;
+        max-width: 180px;
+        padding: 8px 14px;
+        border-radius: 5px;
+        font-size: 9px;
+    }
+
+    .reviews-section {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 18px 12px 22px;
+        background: #fff;
+    }
+
+    .section-title {
+        margin-bottom: 14px;
+        font-size: 15px;
+        line-height: 1.3;
+    }
+
+    .rating-summary {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .rating-score-box {
+        flex: 0 0 35%;
+        min-width: 0;
+        padding: 12px 6px;
+        border-radius: 7px;
+    }
+
+    .score-number {
+        font-size: 28px;
+    }
+
+    .reviews-count {
+        margin: 5px 0;
+        font-size: 8px;
+        text-align: center;
+    }
+
+    .stars-orange {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .stars-orange img {
+        display: block;
+        width: 62px;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .rating-bars-container {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 8px;
+    }
+
+    .bar-row {
+        gap: 4px;
+        font-size: 8px;
+    }
+
+    .bar-label {
+        flex: 0 0 68px;
+        width: 68px;
+        font-size: 8px;
+    }
+
+    .bar-bg {
+        flex: 1 1 auto;
+        min-width: 0;
+        height: 3px;
+        margin: 0 2px;
+    }
+
+    .bar-value {
+        flex: 0 0 18px;
+        width: 18px;
+        font-size: 8px;
+    }
+
+    .comment-input-container {
+        margin-bottom: 14px;
+    }
+
+    .comment-input {
+        min-height: 34px;
+        padding: 9px 10px;
+        border-radius: 5px;
+        font-size: 10px;
+    }
+
+    .reviews-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .otzivi {
+        padding: 12px;
+        border-radius: 7px;
+        background: #fafafa;
+    }
+
+    .review-header {
+        align-items: center;
+        margin-bottom: 9px;
+        padding-right: 0;
+    }
+
+    .user-avatar {
+        flex: 0 0 28px;
+        width: 28px;
+        height: 28px;
+        margin-right: 8px;
+    }
+
+    .user-meta {
+        min-width: 0;
+        gap: 3px;
+    }
+
+    .user-name {
+        font-size: 9px;
+        line-height: 1.25;
+    }
+
+    .user-meta .stars-orange img {
+        width: 54px;
+        height: auto;
+    }
+
+    .review-date {
+        display: none;
+    }
+
+    .review-text {
+        margin-bottom: 8px;
+        font-size: 9px;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .review-images {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .attached-photo {
+        width: 58px;
+        height: 58px;
+        border-radius: 4px;
+    }
+
+    .reviews-section .toggle-container {
+        margin-top: 14px;
+    }
+
+    .related-section {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 16px 12px 28px;
+        background: #fff;
+    }
+
+    .related-section .section-title {
+        margin-bottom: 14px;
+    }
+
+    .products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .related-card {
+        min-width: 0;
+        padding: 12px 8px 10px;
+        border-radius: 6px;
+    }
+
+    .wishlist-btn {
+        top: 8px;
+        right: 7px;
+        padding: 2px;
+    }
+
+    .wishlist-btn svg {
+        width: 13px;
+        height: 12px;
+    }
+
+    .product-image-container {
+        width: 100%;
+        height: 90px;
+        margin-bottom: 8px;
+    }
+
+    .related-card .product-img {
+        max-width: 100%;
+        max-height: 90px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .product-info {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .product-name {
+        min-height: 28px;
+        margin-bottom: 6px;
+        font-size: 9px;
+        line-height: 1.35;
+        -webkit-line-clamp: 2;
+    }
+
+    .product-price {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.2;
+    }
+
+    .buy-btn {
+        width: 100%;
+        padding: 8px 4px;
+        border-radius: 4px;
+        font-size: 9px;
+        line-height: 1.2;
+    }
+
+    .site-footer {
+        width: 100%;
+        padding: 22px 16px 28px;
+        background: #050505;
+    }
+
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        width: 100%;
+        max-width: none;
+        text-align: center;
+    }
+
+    .footer-brand-column,
+    .footer-links-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-width: 0;
+    }
+
+    .footer-logo {
+        margin-bottom: 12px;
+        font-size: 16px;
+    }
+
+    .footer-description {
+        max-width: 270px;
+        margin: 0 auto 14px;
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .footer-socials {
+        justify-content: center;
+        gap: 18px;
+    }
+
+    .social-link svg {
+        width: 13px;
+        height: 13px;
+    }
+
+    .column-title {
+        margin: 0 0 10px;
+        font-size: 10px;
+    }
+
+    .footer-links-list {
+        align-items: center;
+        gap: 7px;
+    }
+
+    .footer-links-list a {
+        font-size: 9px;
+        line-height: 1.3;
+    }
+}
+
+@media (max-width: 380px) {
+    .product-card {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .main-image {
+        height: 220px;
+    }
+
+    .main-image img {
+        max-height: 220px;
+    }
+
+    .product-title {
+        font-size: 20px;
+    }
+
+    .storage-selector {
+        gap: 4px;
+    }
+
+    .storage-option {
+        font-size: 8px;
+    }
+
+    .bar-label {
+        flex-basis: 60px;
+        width: 60px;
+    }
+
+    .related-card {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .product-card {
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .product-title {
+        font-size: 28px;
+    }
+
+    .main-image img {
+        max-height: 420px;
+    }
+
+    .related-section {
+        padding: 80px 24px 50px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }

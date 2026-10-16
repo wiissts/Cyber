@@ -30,9 +30,6 @@ body {
     width: 100%;
 }
 
-/* ============================================================
-   ШАПКА
-   ============================================================ */
 .header-header {
     background-color: #ffffff;
     padding: 20px 0;
@@ -121,7 +118,6 @@ body {
     opacity: 1;
 }
 
-/* Бургер (скрыт на десктопе) */
 .burger-btn {
     display: none;
     background: none;
@@ -139,7 +135,6 @@ body {
 }
 
 
-/* Основная секция */
 .checkout {
     width: 100%;
     background-color: #fff;
@@ -152,7 +147,6 @@ body {
     padding: 72px 160px 48px;
 }
 
-/* Этапы оформления заказа */
 .checkout-steps {
     display: flex;
     justify-content: space-between;
@@ -198,14 +192,12 @@ body {
     font-weight: 500;
 }
 
-/* Заголовок */
 .address-section__title {
     margin: 0 0 27px;
     font-size: 16px;
     font-weight: 600;
 }
 
-/* Список адресов */
 .address-list {
     display: flex;
     flex-direction: column;
@@ -301,7 +293,6 @@ body {
     object-fit: contain;
 }
 
-/* Добавление нового адреса */
 .add-address {
     display: flex;
     flex-direction: column;
@@ -333,7 +324,6 @@ body {
     line-height: 1;
 }
 
-/* Кнопки Back и Next */
 .checkout-buttons {
     display: flex;
     justify-content: flex-end;
@@ -372,7 +362,6 @@ body {
     background-color: #333;
 }
 
-/* Адаптация под планшеты */
 @media (max-width: 1000px) {
     .checkout__container {
         padding: 35px 60px 25px;
@@ -383,7 +372,6 @@ body {
     }
 }
 
-/* Адаптация под телефоны */
 @media (max-width: 600px) {
     .checkout__container {
         padding: 25px 20px;
@@ -440,11 +428,6 @@ body {
         height: 48px;
     }
 }
-
-
-
-
-
 
 .site-footer {
     background-color: #000000;
