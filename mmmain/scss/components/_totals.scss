@@ -1,0 +1,24 @@
+@use "../base" as *;
+
+// Итоги заказа: Subtotal, налог, доставка, Total (корзина и шаг оплаты)
+.totals {
+    @include flex(column, $gap: 20px);
+    font-size: 14px;
+
+    &__row {
+        @include flex($align: center, $justify: space-between, $gap: 12px);
+
+        &--muted {
+            color: $color-label;
+        }
+
+        &--total {
+            font-weight: 600;
+        }
+    }
+
+    &__value {
+        white-space: nowrap;
+        color: $color-black;
+    }
+}
