@@ -1,0 +1,44 @@
+@use "../base" as *;
+
+.breadcrumbs {
+    padding: 20px 0;
+    font-size: 14px;
+    color: $color-gray;
+
+    @include media($bp-mobile) {
+        display: none;
+    }
+
+    &__list {
+        @extend %container;
+        @include flex($align: center, $gap: 8px);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        @include flex($align: center, $gap: 8px);
+
+        // Разделитель между пунктами
+        & + &::before {
+            content: "›";
+        }
+    }
+
+    &__link {
+        transition: color $transition;
+
+        @include hover {
+            color: $color-black;
+        }
+    }
+
+    &__current {
+        font-weight: 500;
+        color: $color-dark;
+    }
+
+    // Крошки над контентом шириной $content-width
+    &--narrow &__list {
+        @extend %content;
+    }
+}

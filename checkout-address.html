@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/checkout.css">
+    <link rel="stylesheet" href="./style/cart.css">
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">cyber</a>
+
+            <form class="search header__search" action="#" role="search">
+                <button class="search__btn" type="submit" aria-label="Search">
+                    <img class="search__icon" src="./img/search.png" alt="">
+                </button>
+                <input class="search__input" type="text" name="query" placeholder="Search">
+            </form>
+
+            <nav class="menu header__menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="index.html" class="menu__link">Home</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger header__burger" type="button" aria-label="Menu">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+
+            <div class="header__actions">
+                <a href="#" class="header__action"><img class="header__icon" src="./img/favorites.png" alt="Wishlist"></a>
+                <a href="cart.html" class="header__action"><img class="header__icon" src="./img/cart.png" alt="Cart"></a>
+                <a href="#" class="header__action"><img class="header__icon" src="./img/user.png" alt="User Profile"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="checkout">
+            <div class="checkout__inner">
+                <ol class="steps checkout__steps">
+                    <li class="steps__item steps__item--active">
+                        <img class="steps__icon" src="./img/step-address-active.png" alt="">
+                        <span class="steps__text">
+                            <span class="steps__number">Step 1</span>
+                            <span class="steps__name">Address</span>
+                        </span>
+                    </li>
+                    <li class="steps__item">
+                        <img class="steps__icon" src="./img/step-shipping.png" alt="">
+                        <span class="steps__text">
+                            <span class="steps__number">Step 2</span>
+                            <span class="steps__name">Shipping</span>
+                        </span>
+                    </li>
+                    <li class="steps__item">
+                        <img class="steps__icon" src="./img/step-payment.png" alt="">
+                        <span class="steps__text">
+                            <span class="steps__number">Step 3</span>
+                            <span class="steps__name">Payment</span>
+                        </span>
+                    </li>
+                </ol>
+
+                <h1 class="checkout__title">Select Address</h1>
+
+                <ul class="address-list">
+                    <li class="address-card">
+                        <label class="address-card__label">
+                            <input class="address-card__radio" type="radio" name="address" checked>
+                            <span class="address-card__content">
+                                <span class="address-card__heading">
+                                    <span class="address-card__name">2118 Thornridge</span>
+                                    <span class="address-card__tag">HOME</span>
+                                </span>
+                                <span>2118 Thornridge Cir. Syracuse, Connecticut 35624</span>
+                                <span>(209) 555-0104</span>
+                            </span>
+                        </label>
+                        <div class="address-card__actions">
+                            <button class="address-card__action" type="button" aria-label="Edit address">
+                                <img class="address-card__action-icon" src="./img/edit.svg" alt="">
+                            </button>
+                            <button class="address-card__action" type="button" aria-label="Delete address">
+                                <img class="address-card__action-icon" src="./img/close.svg" alt="">
+                            </button>
+                        </div>
+                    </li>
+
+                    <li class="address-card">
+                        <label class="address-card__label">
+                            <input class="address-card__radio" type="radio" name="address">
+                            <span class="address-card__content">
+                                <span class="address-card__heading">
+                                    <span class="address-card__name">Headoffice</span>
+                                    <span class="address-card__tag">OFFICE</span>
+                                </span>
+                                <span>2715 Ash Dr. San Jose, South Dakota 83475</span>
+                                <span>(704) 555-0127</span>
+                            </span>
+                        </label>
+                        <div class="address-card__actions">
+                            <button class="address-card__action" type="button" aria-label="Edit address">
+                                <img class="address-card__action-icon" src="./img/edit.svg" alt="">
+                            </button>
+                            <button class="address-card__action" type="button" aria-label="Delete address">
+                                <img class="address-card__action-icon" src="./img/close.svg" alt="">
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="add-address" type="button">
+                    <span class="add-address__icon">+</span>
+                    <span>Add New Address</span>
+                </button>
+
+                <div class="checkout__buttons">
+                    <a href="cart.html" class="btn checkout__btn">Back</a>
+                    <a href="checkout-shipping.html" class="btn btn--filled checkout__btn">Next</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__about">
+                <a href="index.html" class="footer__logo">cyber</a>
+                <p class="footer__text">We are a residential interior design firm located in Portland. Our
+                    boutique-studio offers more than</p>
+                <div class="socials">
+                    <a href="#" class="socials__link" aria-label="Twitter"><img class="socials__icon" src="./img/twitter.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Facebook"><img class="socials__icon" src="./img/facebook.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="TikTok"><img class="socials__icon" src="./img/tiktok.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Instagram"><img class="socials__icon" src="./img/instagram.svg" alt=""></a>
+                </div>
+            </div>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Services</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Bonus program</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Gift cards</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Credit and payment</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Service contracts</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Non-cash account</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Payment</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Assistance to the buyer</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Find an order</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of delivery</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Exchange and return of goods</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Guarantee</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Frequently asked questions</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of use of the site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

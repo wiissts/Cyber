@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/shopping.css">
+    <link rel="stylesheet" href="./style/cart.css">
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">cyber</a>
+
+            <form class="search header__search" action="#" role="search">
+                <button class="search__btn" type="submit" aria-label="Search">
+                    <img class="search__icon" src="./img/search.png" alt="">
+                </button>
+                <input class="search__input" type="text" name="query" placeholder="Search">
+            </form>
+
+            <nav class="menu header__menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="index.html" class="menu__link">Home</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger header__burger" type="button" aria-label="Menu">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+
+            <div class="header__actions">
+                <a href="#" class="header__action"><img class="header__icon" src="./img/favorites.png" alt="Wishlist"></a>
+                <a href="cart.html" class="header__action"><img class="header__icon" src="./img/cart.png" alt="Cart"></a>
+                <a href="#" class="header__action"><img class="header__icon" src="./img/user.png" alt="User Profile"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="cart">
+            <div class="cart__inner">
+                <div class="cart__products">
+                    <h1 class="cart__title">Shopping Cart</h1>
+
+                    <ul class="cart__list" id="cart-list"></ul>
+                </div>
+
+                <aside class="summary">
+                    <h2 class="summary__title">Order Summary</h2>
+
+                    <div class="summary__field">
+                        <label class="summary__label" for="promo-code">Discount code / Promo code</label>
+                        <input class="summary__input" type="text" id="promo-code" placeholder="Code">
+                    </div>
+
+                    <div class="summary__field">
+                        <label class="summary__label" for="bonus-card">Your bonus card number</label>
+                        <div class="summary__bonus">
+                            <input class="summary__bonus-input" type="text" id="bonus-card" placeholder="Enter Card Number">
+                            <button class="btn summary__apply" type="button">Apply</button>
+                        </div>
+                    </div>
+
+                    <dl class="totals summary__totals" id="cart-totals">
+                        <div class="totals__row">
+                            <dt>Subtotal</dt>
+                            <dd class="totals__value" data-total="subtotal">$2347</dd>
+                        </div>
+                        <div class="totals__row totals__row--muted">
+                            <dt>Estimated Tax</dt>
+                            <dd class="totals__value" data-total="tax">$50</dd>
+                        </div>
+                        <div class="totals__row totals__row--muted">
+                            <dt>Estimated shipping &amp; Handling</dt>
+                            <dd class="totals__value" data-total="shipping">$29</dd>
+                        </div>
+                        <div class="totals__row totals__row--total">
+                            <dt>Total</dt>
+                            <dd class="totals__value" data-total="total">$2426</dd>
+                        </div>
+                    </dl>
+
+                    <a href="checkout-address.html" class="btn btn--filled summary__checkout" id="cart-checkout">Checkout</a>
+                </aside>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__about">
+                <a href="index.html" class="footer__logo">cyber</a>
+                <p class="footer__text">We are a residential interior design firm located in Portland. Our
+                    boutique-studio offers more than</p>
+                <div class="socials">
+                    <a href="#" class="socials__link" aria-label="Twitter"><img class="socials__icon" src="./img/twitter.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Facebook"><img class="socials__icon" src="./img/facebook.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="TikTok"><img class="socials__icon" src="./img/tiktok.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Instagram"><img class="socials__icon" src="./img/instagram.svg" alt=""></a>
+                </div>
+            </div>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Services</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Bonus program</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Gift cards</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Credit and payment</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Service contracts</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Non-cash account</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Payment</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Assistance to the buyer</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Find an order</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of delivery</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Exchange and return of goods</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Guarantee</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Frequently asked questions</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of use of the site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>
