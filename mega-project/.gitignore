@@ -1,9 +1,0 @@
-# OS / editors
-.DS_Store
-Thumbs.db
-desktop.ini
-.vscode/
-.idea/
-
-# Build
-*.map
