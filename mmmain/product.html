@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple iPhone 14 Pro Max</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/product.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">cyber</a>
+
+            <form class="search header__search" action="#" role="search">
+                <button class="search__btn" type="submit" aria-label="Search">
+                    <img class="search__icon" src="./img/search.png" alt="">
+                </button>
+                <input class="search__input" type="text" name="query" placeholder="Search">
+            </form>
+
+            <nav class="menu header__menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="index.html" class="menu__link">Home</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger header__burger" type="button" aria-label="Menu">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+
+            <div class="header__actions">
+                <a href="#" class="header__action"><img class="header__icon" src="./img/favorites.png" alt="Wishlist"></a>
+                <a href="cart.html" class="header__action"><img class="header__icon" src="./img/cart.png" alt="Cart"></a>
+                <a href="#" class="header__action"><img class="header__icon" src="./img/user.png" alt="User Profile"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <nav class="breadcrumbs breadcrumbs--narrow" aria-label="Breadcrumbs">
+            <ol class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Home</a></li>
+                <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs__link">Catalog</a></li>
+                <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs__link">Smartphones</a></li>
+                <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs__link">Apple</a></li>
+                <li class="breadcrumbs__item"><span class="breadcrumbs__current">iPhone 14 Pro Max</span></li>
+            </ol>
+        </nav>
+
+        <section class="product-info">
+            <div class="product-info__inner">
+                <div class="gallery">
+                    <ul class="gallery__thumbs">
+                        <li>
+                            <button class="gallery__thumb gallery__thumb--active" type="button" aria-label="Photo 1">
+                                <img class="gallery__thumb-img" src="./img/iphone-14-pro-max-thumb-1.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="gallery__thumb" type="button" aria-label="Photo 2">
+                                <img class="gallery__thumb-img" src="./img/iphone-14-pro-max-thumb-2.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="gallery__thumb" type="button" aria-label="Photo 3">
+                                <img class="gallery__thumb-img" src="./img/iphone-14-pro-max-thumb-3.png" alt="">
+                            </button>
+                        </li>
+                        <li>
+                            <button class="gallery__thumb" type="button" aria-label="Photo 4">
+                                <img class="gallery__thumb-img" src="./img/iphone-14-pro-max-thumb-4.png" alt="">
+                            </button>
+                        </li>
+                    </ul>
+                    <img class="gallery__main" src="./img/iphone-14-pro-max.png" alt="Apple iPhone 14 Pro Max">
+                </div>
+
+                <div class="product-info__content">
+                    <div class="product-info__head">
+                        <h1 class="product-info__title">Apple iPhone 14 Pro Max</h1>
+                        <div class="product-info__prices">
+                            <p class="product-info__price">$1399</p>
+                            <s class="product-info__old-price">$1499</s>
+                        </div>
+                    </div>
+
+                    <div class="colors">
+                        <p class="colors__label">Select color :</p>
+                        <ul class="colors__list">
+                            <li><button class="colors__item" type="button" style="--color: #000000" aria-label="Black"></button></li>
+                            <li><button class="colors__item colors__item--active" type="button" style="--color: #781dbc" aria-label="Deep Purple"></button></li>
+                            <li><button class="colors__item" type="button" style="--color: #e10000" aria-label="Red"></button></li>
+                            <li><button class="colors__item" type="button" style="--color: #e1b000" aria-label="Gold"></button></li>
+                            <li><button class="colors__item" type="button" style="--color: #e8e8e8" aria-label="Silver"></button></li>
+                        </ul>
+                    </div>
+
+                    <ul class="memory">
+                        <li class="memory__option"><button class="memory__item" type="button" disabled>128GB</button></li>
+                        <li class="memory__option"><button class="memory__item" type="button">256GB</button></li>
+                        <li class="memory__option"><button class="memory__item" type="button">512GB</button></li>
+                        <li class="memory__option"><button class="memory__item memory__item--active" type="button">1TB</button></li>
+                    </ul>
+
+                    <ul class="specs">
+                        <li class="specs__item">
+                            <img class="specs__icon" src="./img/spec-screen.png" alt="">
+                            <p class="specs__text"><span class="specs__name">Screen size</span><span class="specs__value">6.7"</span></p>
+                        </li>
+                        <li class="specs__item">
+                            <img class="specs__icon" src="./img/spec-cpu.png" alt="">
+                            <p class="specs__text"><span class="specs__name">CPU</span><span class="specs__value">Apple A16 Bionic</span></p>
+                        </li>
+                        <li class="specs__item">
+                            <img class="specs__icon" src="./img/spec-cores.png" alt="">
+                            <p class="specs__text"><span class="specs__name">Number of Cores</span><span class="specs__value">6</span></p>
+                        </li>
+                        <li class="specs__item">
+                            <img class="specs__icon" src="./img/spec-main-camera.png" alt="">
+                            <p class="specs__text"><span class="specs__name">Main camera</span><span class="specs__value">48-12-12 MP</span></p>
+                        </li>
+                        <li class="specs__item">
+                            <img class="specs__icon" src="./img/spec-front-camera.png" alt="">
+                            <p class="specs__text"><span class="specs__name">Front-camera</span><span class="specs__value">12 MP</span></p>
+                        </li>
+                        <li class="specs__item">
+                            <img class="specs__icon" src="./img/spec-battery.png" alt="">
+                            <p class="specs__text"><span class="specs__name">Battery capacity</span><span class="specs__value">4323 mAh</span></p>
+                        </li>
+                    </ul>
+
+                    <p class="product-info__description">Enhanced capabilities thanks to an enlarged display of 6.7
+                        inches and work without recharging throughout the day. Incredible photos in weak, yes and in
+                        bright lighting using the new system with two cameras
+                        <a class="product-info__more" href="#details">more...</a></p>
+
+                    <div class="product-info__actions">
+                        <button class="btn product-info__btn" type="button">Add to Wishlist</button>
+                        <button class="btn btn--filled product-info__btn" type="button">Add to Card</button>
+                    </div>
+
+                    <ul class="features">
+                        <li class="features__item">
+                            <span class="features__icon-box"><img class="features__icon" src="./img/feature-delivery.png" alt=""></span>
+                            <p class="features__text">Free Delivery <span class="features__value">1-2 day</span></p>
+                        </li>
+                        <li class="features__item">
+                            <span class="features__icon-box"><img class="features__icon" src="./img/feature-stock.png" alt=""></span>
+                            <p class="features__text">In Stock <span class="features__value">Today</span></p>
+                        </li>
+                        <li class="features__item">
+                            <span class="features__icon-box"><img class="features__icon" src="./img/feature-guarantee.png" alt=""></span>
+                            <p class="features__text">Guaranteed <span class="features__value">1 year</span></p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="details" id="details">
+            <div class="details__inner">
+                <div class="details__content">
+                    <h2 class="product-section-title">Details</h2>
+                    <p class="details__text">Just as a book is judged by its cover, the first thing you notice when
+                        you pick up a modern smartphone is the display. Nothing surprising, because advanced
+                        technologies allow you to practically level the display frames and cutouts for the front camera
+                        and speaker, leaving no room for bold design solutions. And how good that in such realities
+                        Apple everything is fine with displays. Both critics and mass consumers always praise the
+                        quality of the picture provided by the products of the Californian brand. And last year's
+                        6.7-inch Retina panels, which had ProMotion, caused real admiration for many.</p>
+
+                    <div class="details__groups">
+                        <div class="details__group">
+                            <h3 class="details__subtitle">Screen</h3>
+                            <dl class="details__list">
+                                <div class="details__row">
+                                    <dt class="details__name">Screen diagonal</dt>
+                                    <dd class="details__value">6.7"</dd>
+                                </div>
+                                <div class="details__row">
+                                    <dt class="details__name">The screen resolution</dt>
+                                    <dd class="details__value">2796x1290</dd>
+                                </div>
+                                <div class="details__row">
+                                    <dt class="details__name">The screen refresh rate</dt>
+                                    <dd class="details__value">120 Hz</dd>
+                                </div>
+                                <div class="details__row">
+                                    <dt class="details__name">The pixel density</dt>
+                                    <dd class="details__value">460 ppi</dd>
+                                </div>
+                                <div class="details__row">
+                                    <dt class="details__name">Screen type</dt>
+                                    <dd class="details__value">OLED</dd>
+                                </div>
+                                <div class="details__row">
+                                    <dt class="details__name">Additionally</dt>
+                                    <dd class="details__value">Dynamic Island<br>Always-On display<br>HDR display<br>True Tone<br>Wide color (P3)</dd>
+                                </div>
+                            </dl>
+                        </div>
+
+                        <div class="details__group">
+                            <h3 class="details__subtitle">CPU</h3>
+                            <dl class="details__list">
+                                <div class="details__row">
+                                    <dt class="details__name">CPU</dt>
+                                    <dd class="details__value">A16 Bionic</dd>
+                                </div>
+                                <div class="details__row">
+                                    <dt class="details__name">Number of cores</dt>
+                                    <dd class="details__value">6</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+
+                    <button class="more-btn details__more" type="button">
+                        View More
+                        <svg class="more-btn__icon" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                            <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews">
+            <div class="reviews__inner">
+                <h2 class="product-section-title">Reviews</h2>
+
+                <div class="reviews__overall">
+                    <div class="rating">
+                        <p class="rating__score">4.8</p>
+                        <p class="rating__count">of 125 reviews</p>
+                        <img class="rating__stars" src="./img/stars-4-5.png" alt="Rating 4.8 out of 5">
+                    </div>
+
+                    <ul class="rating-bars">
+                        <li class="rating-bars__item">
+                            <span class="rating-bars__label">Excellent</span>
+                            <span class="rating-bars__track"><span class="rating-bars__fill" style="--fill: 95%"></span></span>
+                            <span class="rating-bars__count">100</span>
+                        </li>
+                        <li class="rating-bars__item">
+                            <span class="rating-bars__label">Good</span>
+                            <span class="rating-bars__track"><span class="rating-bars__fill" style="--fill: 50%"></span></span>
+                            <span class="rating-bars__count">11</span>
+                        </li>
+                        <li class="rating-bars__item">
+                            <span class="rating-bars__label">Average</span>
+                            <span class="rating-bars__track"><span class="rating-bars__fill" style="--fill: 20%"></span></span>
+                            <span class="rating-bars__count">3</span>
+                        </li>
+                        <li class="rating-bars__item">
+                            <span class="rating-bars__label">Below Average</span>
+                            <span class="rating-bars__track"><span class="rating-bars__fill" style="--fill: 40%"></span></span>
+                            <span class="rating-bars__count">8</span>
+                        </li>
+                        <li class="rating-bars__item">
+                            <span class="rating-bars__label">Poor</span>
+                            <span class="rating-bars__track"><span class="rating-bars__fill" style="--fill: 10%"></span></span>
+                            <span class="rating-bars__count">1</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <input class="reviews__comment" type="text" placeholder="Leave Comment" aria-label="Leave Comment">
+
+                <ul class="reviews__list">
+                    <li class="review">
+                        <img class="review__avatar" src="./img/avatar-1.png" alt="">
+                        <div class="review__content">
+                            <div class="review__head">
+                                <h3 class="review__author">Grace Carey</h3>
+                                <time class="review__date" datetime="2023-01-24">24 January, 2023</time>
+                            </div>
+                            <img class="review__stars" src="./img/stars-4.png" alt="4 out of 5">
+                            <p class="review__text">I was a bit nervous to be buying a secondhand phone from Amazon,
+                                but I couldn't be happier with my purchase!! I have a pre-paid data plan so I was
+                                worried that this phone wouldn't connect with my data plan, since the new phones don't
+                                have the physical Sim tray anymore, but couldn't have been easier! I bought an Unlocked
+                                black iPhone 14 Pro Max in excellent condition and everything is PERFECT. It was super
+                                easy to set up and the phone works and looks great. It truly was in excellent
+                                condition. Highly recommend!!!🖤</p>
+                        </div>
+                    </li>
+                    <li class="review">
+                        <img class="review__avatar" src="./img/avatar-2.png" alt="">
+                        <div class="review__content">
+                            <div class="review__head">
+                                <h3 class="review__author">Ronald Richards</h3>
+                                <time class="review__date" datetime="2023-01-24">24 January, 2023</time>
+                            </div>
+                            <img class="review__stars" src="./img/stars-5.png" alt="5 out of 5">
+                            <p class="review__text">This phone has 1T storage and is durable. Plus all the new iPhones
+                                have a C port! Apple is phasing out the current ones! (All about the Benjamins) So if
+                                you want a phone that's going to last grab an iPhone 14 pro max and get several cords
+                                and plugs.</p>
+                        </div>
+                    </li>
+                    <li class="review">
+                        <img class="review__avatar" src="./img/avatar-3.png" alt="">
+                        <div class="review__content">
+                            <div class="review__head">
+                                <h3 class="review__author">Darcy King</h3>
+                                <time class="review__date" datetime="2023-01-24">24 January, 2023</time>
+                            </div>
+                            <img class="review__stars" src="./img/stars-4.png" alt="4 out of 5">
+                            <p class="review__text">I might be the only one to say this but the camera is a little
+                                funky. Hoping it will change with a software update; otherwise, love this phone! Came
+                                in great condition</p>
+                            <div class="review__photos">
+                                <img class="review__photo" src="./img/review-photo-1.png" alt="Customer photo 1">
+                                <img class="review__photo" src="./img/review-photo-2.png" alt="Customer photo 2">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+                <button class="more-btn reviews__more" type="button">
+                    View More
+                    <svg class="more-btn__icon" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                        <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="related">
+            <div class="related__inner">
+                <h2 class="product-section-title">Related Products</h2>
+
+                <div class="products-list">
+                    <article class="product-card">
+                        <button class="product-card__like" type="button" aria-label="Add to wishlist"></button>
+                        <img class="product-card__img" src="./img/iphone-14-pro-gold.png" alt="Apple iPhone 14 Pro 512GB Gold (MQ233)">
+                        <h3 class="product-card__name">Apple iPhone 14 Pro 512GB Gold (MQ233)</h3>
+                        <p class="product-card__price">$1437</p>
+                        <a href="product.html" class="btn btn--filled product-card__buy">Buy Now</a>
+                    </article>
+                    <article class="product-card">
+                        <button class="product-card__like" type="button" aria-label="Add to wishlist"></button>
+                        <img class="product-card__img" src="./img/airpods-max-silver.png" alt="AirPods Max Silver Starlight Aluminium">
+                        <h3 class="product-card__name">AirPods Max Silver Starlight Aluminium</h3>
+                        <p class="product-card__price">$549</p>
+                        <a href="product.html" class="btn btn--filled product-card__buy">Buy Now</a>
+                    </article>
+                    <article class="product-card">
+                        <button class="product-card__like" type="button" aria-label="Add to wishlist"></button>
+                        <img class="product-card__img" src="./img/apple-watch-series-9.png" alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium">
+                        <h3 class="product-card__name">Apple Watch Series 9 GPS 41mm Starlight Aluminium</h3>
+                        <p class="product-card__price">$399</p>
+                        <a href="product.html" class="btn btn--filled product-card__buy">Buy Now</a>
+                    </article>
+                    <article class="product-card">
+                        <button class="product-card__like" type="button" aria-label="Add to wishlist"></button>
+                        <img class="product-card__img" src="./img/iphone-14-pro-silver.png" alt="Apple iPhone 14 Pro 1TB Gold (MQ2V3)">
+                        <h3 class="product-card__name">Apple iPhone 14 Pro 1TB Gold (MQ2V3)</h3>
+                        <p class="product-card__price">$1499</p>
+                        <a href="product.html" class="btn btn--filled product-card__buy">Buy Now</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__about">
+                <a href="index.html" class="footer__logo">cyber</a>
+                <p class="footer__text">We are a residential interior design firm located in Portland. Our
+                    boutique-studio offers more than</p>
+                <div class="socials">
+                    <a href="#" class="socials__link" aria-label="Twitter"><img class="socials__icon" src="./img/twitter.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Facebook"><img class="socials__icon" src="./img/facebook.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="TikTok"><img class="socials__icon" src="./img/tiktok.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Instagram"><img class="socials__icon" src="./img/instagram.svg" alt=""></a>
+                </div>
+            </div>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Services</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Bonus program</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Gift cards</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Credit and payment</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Service contracts</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Non-cash account</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Payment</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Assistance to the buyer</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Find an order</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of delivery</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Exchange and return of goods</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Guarantee</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Frequently asked questions</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of use of the site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

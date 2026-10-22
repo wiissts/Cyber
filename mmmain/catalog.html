@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style/catalog.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">cyber</a>
+
+            <form class="search header__search" action="#" role="search">
+                <button class="search__btn" type="submit" aria-label="Search">
+                    <img class="search__icon" src="./img/search.png" alt="">
+                </button>
+                <input class="search__input" type="text" name="query" placeholder="Search">
+            </form>
+
+            <nav class="menu header__menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="index.html" class="menu__link">Home</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">About</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Contact Us</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Blog</a></li>
+                </ul>
+            </nav>
+
+            <button class="burger header__burger" type="button" aria-label="Menu">
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+                <span class="burger__line"></span>
+            </button>
+
+            <div class="header__actions">
+                <a href="#" class="header__action"><img class="header__icon" src="./img/favorites.png" alt="Wishlist"></a>
+                <a href="cart.html" class="header__action"><img class="header__icon" src="./img/cart.png" alt="Cart"></a>
+                <a href="#" class="header__action"><img class="header__icon" src="./img/user.png" alt="User Profile"></a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <nav class="breadcrumbs breadcrumbs--narrow" aria-label="Breadcrumbs">
+            <ol class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="index.html" class="breadcrumbs__link">Home</a></li>
+                <li class="breadcrumbs__item"><a href="catalog.html" class="breadcrumbs__link">Catalog</a></li>
+                <li class="breadcrumbs__item"><span class="breadcrumbs__current">Smartphones</span></li>
+            </ol>
+        </nav>
+
+        <section class="catalog">
+            <div class="catalog__inner">
+                <aside class="catalog__filters">
+                    <div class="filter filter--open">
+                        <button class="filter__head" type="button">Brand</button>
+                        <div class="filter__body">
+                            <form class="search filter__search" action="#" role="search">
+                                <input class="search__input" type="text" placeholder="Search">
+                                <button class="search__btn" type="submit" aria-label="Search">
+                                    <img class="search__icon" src="./img/search.png" alt="">
+                                </button>
+                            </form>
+
+                            <ul class="filter__list">
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox" checked>
+                                        Apple <span class="checkbox__count">110</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        Samsung <span class="checkbox__count">125</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        Xiaomi <span class="checkbox__count">68</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        Poco <span class="checkbox__count">44</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        OPPO <span class="checkbox__count">36</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        Honor <span class="checkbox__count">10</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        Motorola <span class="checkbox__count">34</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        Nokia <span class="checkbox__count">22</span>
+                                    </label>
+                                </li>
+                                <li>
+                                    <label class="checkbox">
+                                        <input class="checkbox__input" type="checkbox">
+                                        Realme <span class="checkbox__count">35</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="filter">
+                        <button class="filter__head" type="button">Battery capacity</button>
+                    </div>
+                    <div class="filter">
+                        <button class="filter__head" type="button">Screen type</button>
+                    </div>
+                    <div class="filter">
+                        <button class="filter__head" type="button">Screen diagonal</button>
+                    </div>
+                    <div class="filter">
+                        <button class="filter__head" type="button">Protection class</button>
+                    </div>
+                    <div class="filter">
+                        <button class="filter__head" type="button">Built-in memory</button>
+                    </div>
+                </aside>
+
+                <div class="catalog__content">
+                    <div class="catalog__toolbar catalog__toolbar--mobile">
+                        <button class="filters-btn" type="button">Filters <span aria-hidden="true">⚙</span></button>
+                        <select class="select" aria-label="Sort products">
+                            <option>By rating</option>
+                            <option>By price</option>
+                            <option>By name</option>
+                        </select>
+                    </div>
+
+                    <div class="catalog__toolbar">
+                        <p class="catalog__count">Selected Products: <span class="catalog__count-value">85</span></p>
+                        <select class="select catalog__sort" aria-label="Sort products">
+                            <option>By rating</option>
+                            <option>By price</option>
+                            <option>By name</option>
+                        </select>
+                    </div>
+
+                    <div class="products-list catalog__list" id="catalog-list"></div>
+
+                    <nav class="pagination catalog__pagination" aria-label="Pages">
+                        <button class="pagination__btn pagination__btn--arrow" type="button" aria-label="Previous page">‹</button>
+                        <button class="pagination__btn pagination__btn--active" type="button">1</button>
+                        <button class="pagination__btn" type="button">2</button>
+                        <button class="pagination__btn" type="button">3</button>
+                        <span class="pagination__dots">....</span>
+                        <button class="pagination__btn" type="button">12</button>
+                        <button class="pagination__btn pagination__btn--arrow" type="button" aria-label="Next page">›</button>
+                    </nav>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__about">
+                <a href="index.html" class="footer__logo">cyber</a>
+                <p class="footer__text">We are a residential interior design firm located in Portland. Our
+                    boutique-studio offers more than</p>
+                <div class="socials">
+                    <a href="#" class="socials__link" aria-label="Twitter"><img class="socials__icon" src="./img/twitter.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Facebook"><img class="socials__icon" src="./img/facebook.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="TikTok"><img class="socials__icon" src="./img/tiktok.svg" alt=""></a>
+                    <a href="#" class="socials__link" aria-label="Instagram"><img class="socials__icon" src="./img/instagram.svg" alt=""></a>
+                </div>
+            </div>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Services</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Bonus program</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Gift cards</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Credit and payment</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Service contracts</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Non-cash account</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Payment</a></li>
+                </ul>
+            </nav>
+
+            <nav class="footer__col">
+                <h3 class="footer__title">Assistance to the buyer</h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="#" class="footer__link">Find an order</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of delivery</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Exchange and return of goods</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Guarantee</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Frequently asked questions</a></li>
+                    <li class="footer__item"><a href="#" class="footer__link">Terms of use of the site</a></li>
+                </ul>
+            </nav>
+        </div>
+    </footer>
+
+    <script src="./js/products.js"></script>
+    <script src="./js/catalog.js"></script>
+</body>
+
+</html>
