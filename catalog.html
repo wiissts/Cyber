@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/catalog.css">
+    <link rel="stylesheet" href="./style/cart.css">
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
+    <script src="./js/product-card.js"></script>
+    <script src="./js/catalog.js"></script>
 </head>
 
 <body>
@@ -165,15 +170,7 @@
 
                     <div class="products-list catalog__list" id="catalog-list"></div>
 
-                    <nav class="pagination catalog__pagination" aria-label="Pages">
-                        <button class="pagination__btn pagination__btn--arrow" type="button" aria-label="Previous page">‹</button>
-                        <button class="pagination__btn pagination__btn--active" type="button">1</button>
-                        <button class="pagination__btn" type="button">2</button>
-                        <button class="pagination__btn" type="button">3</button>
-                        <span class="pagination__dots">....</span>
-                        <button class="pagination__btn" type="button">12</button>
-                        <button class="pagination__btn pagination__btn--arrow" type="button" aria-label="Next page">›</button>
-                    </nav>
+                    <nav class="pagination catalog__pagination" id="pagination" aria-label="Pages"></nav>
                 </div>
             </div>
         </section>
@@ -218,9 +215,6 @@
             </nav>
         </div>
     </footer>
-
-    <script src="./js/products.js"></script>
-    <script src="./js/catalog.js"></script>
 </body>
 
 </html>

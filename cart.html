@@ -9,6 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style/shopping.css">
+    <link rel="stylesheet" href="./style/cart.css">
+    <script src="./js/products.js"></script>
+    <script src="./js/cart.js"></script>
 </head>
 
 <body>
@@ -52,52 +55,7 @@
                 <div class="cart__products">
                     <h1 class="cart__title">Shopping Cart</h1>
 
-                    <ul class="cart__list">
-                        <li class="cart-item">
-                            <img class="cart-item__img" src="./img/iphone-14-pro-max.png" alt="Apple iPhone 14 Pro Max">
-                            <div class="cart-item__info">
-                                <h3 class="cart-item__name">Apple iPhone 14 Pro Max<br>128Gb Deep Purple</h3>
-                                <p class="cart-item__code">#25139526913984</p>
-                            </div>
-                            <div class="counter">
-                                <button class="counter__btn" type="button" aria-label="Decrease">−</button>
-                                <input class="counter__value" type="number" value="1" min="1" aria-label="Quantity">
-                                <button class="counter__btn" type="button" aria-label="Increase">+</button>
-                            </div>
-                            <span class="cart-item__price">$1399</span>
-                            <button class="cart-item__remove" type="button" aria-label="Remove item">×</button>
-                        </li>
-
-                        <li class="cart-item">
-                            <img class="cart-item__img" src="./img/airpods-max-silver.png" alt="AirPods Max Silver">
-                            <div class="cart-item__info">
-                                <h3 class="cart-item__name">AirPods Max Silver</h3>
-                                <p class="cart-item__code">#53459358345</p>
-                            </div>
-                            <div class="counter">
-                                <button class="counter__btn" type="button" aria-label="Decrease">−</button>
-                                <input class="counter__value" type="number" value="1" min="1" aria-label="Quantity">
-                                <button class="counter__btn" type="button" aria-label="Increase">+</button>
-                            </div>
-                            <span class="cart-item__price">$549</span>
-                            <button class="cart-item__remove" type="button" aria-label="Remove item">×</button>
-                        </li>
-
-                        <li class="cart-item">
-                            <img class="cart-item__img" src="./img/apple-watch-series-9.png" alt="Apple Watch Series 9">
-                            <div class="cart-item__info">
-                                <h3 class="cart-item__name">Apple Watch Series 9<br>GPS 41mm Starlight<br>Aluminium</h3>
-                                <p class="cart-item__code">#63632324</p>
-                            </div>
-                            <div class="counter">
-                                <button class="counter__btn" type="button" aria-label="Decrease">−</button>
-                                <input class="counter__value" type="number" value="1" min="1" aria-label="Quantity">
-                                <button class="counter__btn" type="button" aria-label="Increase">+</button>
-                            </div>
-                            <span class="cart-item__price">$399</span>
-                            <button class="cart-item__remove" type="button" aria-label="Remove item">×</button>
-                        </li>
-                    </ul>
+                    <ul class="cart__list" id="cart-list"></ul>
                 </div>
 
                 <aside class="summary">
@@ -116,26 +74,26 @@
                         </div>
                     </div>
 
-                    <dl class="totals summary__totals">
+                    <dl class="totals summary__totals" id="cart-totals">
                         <div class="totals__row">
                             <dt>Subtotal</dt>
-                            <dd class="totals__value">$2347</dd>
+                            <dd class="totals__value" data-total="subtotal">$2347</dd>
                         </div>
                         <div class="totals__row totals__row--muted">
                             <dt>Estimated Tax</dt>
-                            <dd class="totals__value">$50</dd>
+                            <dd class="totals__value" data-total="tax">$50</dd>
                         </div>
                         <div class="totals__row totals__row--muted">
                             <dt>Estimated shipping &amp; Handling</dt>
-                            <dd class="totals__value">$29</dd>
+                            <dd class="totals__value" data-total="shipping">$29</dd>
                         </div>
                         <div class="totals__row totals__row--total">
                             <dt>Total</dt>
-                            <dd class="totals__value">$2426</dd>
+                            <dd class="totals__value" data-total="total">$2426</dd>
                         </div>
                     </dl>
 
-                    <a href="checkout-address.html" class="btn btn--filled summary__checkout">Checkout</a>
+                    <a href="checkout-address.html" class="btn btn--filled summary__checkout" id="cart-checkout">Checkout</a>
                 </aside>
             </div>
         </section>
