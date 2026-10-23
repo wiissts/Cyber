@@ -1,0 +1,74 @@
+@use "../base" as *;
+
+// Шаг 2: способ доставки
+
+.shipping {
+    @include flex(column, $gap: 12px);
+}
+
+// Невыбранный вариант доставки приглушён — состояние берётся из :checked, без JS
+.shipping-option {
+    $block: &;
+
+    @include flex($align: center, $gap: 12px);
+    min-height: 57px;
+    padding: 0 18px;
+    border: 1px solid $color-border-field;
+    border-radius: $radius-md;
+    font-size: 12px;
+    color: $color-inactive;
+
+    @include media($bp-mobile) {
+        flex-wrap: wrap;
+        gap: 8px;
+        padding: 12px;
+    }
+
+    &:has(#{$block}__radio:checked) {
+        color: $color-title;
+
+        #{$block}__description {
+            color: $color-text-muted;
+        }
+    }
+
+    &__radio {
+        flex-shrink: 0;
+        @include size(19px);
+        accent-color: $color-black;
+        cursor: pointer;
+    }
+
+    &__label {
+        @include flex($align: center, $gap: 12px);
+        flex: 1;
+        min-width: 0;
+        cursor: pointer;
+
+        @include media($bp-mobile) {
+            flex-wrap: wrap;
+            gap: 4px 8px;
+        }
+    }
+
+    &__price {
+        flex-shrink: 0;
+        font-weight: 500;
+    }
+
+    &__date {
+        flex-shrink: 0;
+        margin-left: auto;
+        white-space: nowrap;
+    }
+
+    &__select {
+        padding: 5px 0 5px 5px;
+        border: none;
+        outline: none;
+        background-color: transparent;
+        color: inherit;
+        font-size: 12px;
+        cursor: pointer;
+    }
+}

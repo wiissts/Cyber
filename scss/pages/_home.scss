@@ -1,0 +1,729 @@
+@use "../base" as *;
+
+// Hero
+
+.hero {
+    padding-top: 60px;
+    overflow: hidden;
+    @include theme($color-dark);
+
+    @include media($bp-mobile) {
+        padding-top: 24px;
+    }
+
+    &__inner {
+        @extend %content;
+        @include flex($align: center, $justify: space-between, $gap: 32px);
+        min-height: 600px;
+
+        @include media($bp-desktop) {
+            min-height: 520px;
+        }
+
+        @include media($bp-mobile) {
+            flex-direction: column;
+            gap: 20px;
+            min-height: auto;
+            text-align: center;
+        }
+    }
+
+    &__content {
+        flex: 1 1 50%;
+        max-width: 500px;
+
+        @include media($bp-mobile) {
+            max-width: 100%;
+        }
+    }
+
+    &__subtitle {
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: $color-subtitle;
+
+        @include media($bp-mobile) {
+            margin-bottom: 4px;
+            font-size: 14px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        @include font(80px, 400, 1.1);
+
+        @include media($bp-desktop) {
+            font-size: clamp(48px, 6vw, 72px);
+        }
+
+        @include media($bp-mobile) {
+            margin-bottom: 12px;
+            @include font(36px, $line-height: 1);
+        }
+
+        @include media($bp-small) {
+            font-size: 32px;
+        }
+    }
+
+    &__accent {
+        font-weight: 700;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+        font-size: 18px;
+        color: $color-gray-light;
+
+        @include media($bp-mobile) {
+            max-width: 280px;
+            margin: 0 auto 16px;
+            @include font(11px, $line-height: 1.4);
+        }
+    }
+
+    &__btn {
+        padding: 16px 40px;
+
+        @include media($bp-mobile) {
+            padding: 9px 24px;
+            border-radius: 3px;
+            font-size: 11px;
+        }
+    }
+
+    &__img {
+        flex: 0 1 500px;
+        min-width: 0;
+        align-self: flex-end;
+
+        @include media($bp-desktop) {
+            flex-basis: 42%;
+        }
+
+        @include media($bp-mobile) {
+            align-self: center;
+            width: 100%;
+            max-width: 280px;
+        }
+
+        @include media($bp-small) {
+            max-width: 250px;
+        }
+    }
+}
+
+// Баннеры под hero
+
+.banners {
+    @include flex;
+    background-color: $color-bg;
+
+    @include media($bp-mobile) {
+        flex-direction: column;
+    }
+
+    &__col {
+        @include flex(column);
+        width: 50%;
+        min-width: 0;
+
+        @include media($bp-mobile) {
+            width: 100%;
+        }
+    }
+
+    &__row {
+        @include flex;
+        flex: 1 1 auto;
+
+        @include media($bp-mobile) {
+            flex-direction: column;
+        }
+    }
+}
+
+// Картинка баннера декоративно прижата к краю, поэтому позиционируется абсолютно.
+// На мобильных баннер становится колонкой и картинка встаёт в поток под текстом.
+.banner {
+    $block: &;
+
+    @include flex($align: center, $justify: flex-end, $gap: 15px);
+    position: relative;
+    width: 50%;
+    min-width: 0;
+    min-height: 272px;
+    padding: 32px;
+    overflow: hidden;
+    @include theme($color-bg-light);
+
+    @include media($bp-desktop) {
+        padding: 24px;
+    }
+
+    @include media($bp-mobile) {
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        min-height: auto;
+        padding: 24px $page-padding-mobile;
+        text-align: center;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 1;
+        max-width: 58%;
+        text-align: right;
+
+        @include media($bp-mobile) {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        @include font(24px, 600, 1.1);
+
+        @include media($bp-desktop) {
+            font-size: 21px;
+        }
+
+        @include media($bp-mobile) {
+            margin-bottom: 6px;
+        }
+    }
+
+    &__text {
+        @include font(14px, $line-height: 1.4);
+        color: $color-text-muted;
+
+        @include media($bp-mobile) {
+            font-size: 11px;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 42%;
+        max-width: 150px;
+
+        @include media($bp-mobile) {
+            position: static;
+            width: 100%;
+            max-width: 160px;
+        }
+    }
+
+    &--muted {
+        @include theme($color-bg-muted);
+    }
+
+    &--dark {
+        @include theme($color-bg-banner-dark);
+
+        #{$block}__text {
+            color: $color-gray-light;
+        }
+    }
+
+    // Широкий баннер (PlayStation)
+    &--wide {
+        flex: 1 1 auto;
+        gap: 20px;
+        width: 100%;
+        min-height: 328px;
+        padding: 48px;
+
+        @include media($bp-desktop) {
+            padding: 32px;
+        }
+
+        @include media($bp-mobile) {
+            padding: 24px $page-padding-mobile;
+        }
+
+        #{$block}__content {
+            max-width: 52%;
+
+            @include media($bp-mobile) {
+                max-width: 100%;
+            }
+        }
+
+        #{$block}__title {
+            margin-bottom: 15px;
+            font-size: 32px;
+
+            @include media($bp-desktop) {
+                font-size: 26px;
+            }
+
+            @include media($bp-mobile) {
+                margin-bottom: 6px;
+                font-size: 21px;
+            }
+        }
+
+        #{$block}__text {
+            font-size: 16px;
+
+            @include media($bp-mobile) {
+                font-size: 11px;
+            }
+        }
+
+        #{$block}__img {
+            width: 44%;
+            max-width: 250px;
+
+            @include media($bp-mobile) {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+    }
+
+    // Высокий баннер с кнопкой (MacBook): текст слева, картинка справа
+    &--tall {
+        justify-content: flex-start;
+        padding: 48px;
+        @include theme($color-bg-muted);
+
+        @include media($bp-desktop) {
+            padding: 32px;
+        }
+
+        @include media($bp-mobile) {
+            padding: 24px $page-padding-mobile;
+        }
+
+        #{$block}__content {
+            @include flex(column, flex-start);
+            max-width: 52%;
+            text-align: left;
+
+            @include media($bp-mobile) {
+                align-items: center;
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        #{$block}__title {
+            margin-bottom: 15px;
+            @include font(36px, 400);
+
+            @include media($bp-desktop) {
+                font-size: 30px;
+            }
+
+            @include media($bp-mobile) {
+                margin-bottom: 8px;
+                font-size: 28px;
+            }
+        }
+
+        #{$block}__text {
+            margin-bottom: 25px;
+            font-size: 16px;
+
+            @include media($bp-mobile) {
+                margin-bottom: 16px;
+                font-size: 11px;
+            }
+        }
+
+        #{$block}__img {
+            left: auto;
+            right: 0;
+            width: 52%;
+            max-width: 350px;
+
+            @include media($bp-mobile) {
+                width: 100%;
+                max-width: 220px;
+            }
+        }
+    }
+
+    &__accent {
+        font-weight: 700;
+    }
+
+    &__btn {
+        padding: 12px 30px;
+
+        @include media($bp-mobile) {
+            padding: 9px 24px;
+            border-radius: $radius-xs;
+            font-size: 11px;
+        }
+    }
+}
+
+// Общий заголовок секций главной
+
+.section-title {
+    @include font(32px, 600);
+    color: $color-dark;
+
+    @include media($bp-mobile) {
+        font-size: 16px;
+    }
+
+    @include media($bp-small) {
+        font-size: 14px;
+    }
+}
+
+// Категории
+
+.categories {
+    padding: 80px 0;
+
+    @include media($bp-mobile) {
+        padding: 28px 0;
+    }
+
+    &__inner {
+        @extend %container;
+    }
+
+    &__head {
+        @include flex($align: center, $justify: space-between, $gap: 16px);
+        margin-bottom: 40px;
+
+        @include media($bp-mobile) {
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__arrows {
+        @include flex($gap: 20px);
+        flex-shrink: 0;
+
+        @include media($bp-mobile) {
+            gap: 8px;
+        }
+    }
+
+    &__arrow {
+        opacity: 0.6;
+        transition: opacity $transition;
+
+        @include hover {
+            opacity: 1;
+        }
+    }
+
+    &__arrow-icon {
+        @include size(24px);
+
+        @include media($bp-mobile) {
+            @include size(16px);
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 20px;
+
+        @include media($bp-desktop) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        @include media($bp-mobile) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 8px;
+        }
+    }
+}
+
+.category {
+    @include flex(column, center, center, 15px);
+    height: 100%;
+    padding: 30px 20px;
+    border-radius: $radius-lg;
+    background-color: $color-bg-search;
+    text-align: center;
+    transition: background-color $transition;
+
+    @include media($bp-mobile) {
+        gap: 6px;
+        min-height: 76px;
+        padding: 12px 6px;
+        border-radius: $radius-sm;
+    }
+
+    @include hover {
+        background-color: $color-border;
+    }
+
+    &__icon {
+        @include size(40px);
+
+        @include media($bp-mobile) {
+            @include size(24px);
+        }
+    }
+
+    &__name {
+        @include font(16px, 500);
+        color: $color-dark;
+
+        @include media($bp-mobile) {
+            font-size: 10px;
+        }
+
+        @include media($bp-small) {
+            font-size: 9px;
+        }
+    }
+}
+
+// Новинки с вкладками
+
+.arrivals {
+    padding: 80px 0;
+
+    @include media($bp-mobile) {
+        padding: 28px 0;
+    }
+
+    &__inner {
+        @extend %container;
+    }
+
+    &__tabs {
+        margin-bottom: 40px;
+
+        @include media($bp-mobile) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+.tabs {
+    @include flex($gap: 40px);
+    flex-wrap: wrap;
+
+    @include media($bp-mobile) {
+        flex-wrap: nowrap;
+        gap: 16px;
+        @include scroll-x;
+    }
+
+    &__link {
+        padding-bottom: 5px;
+        border-bottom: 2px solid transparent;
+        font-size: 18px;
+        color: $color-text-muted;
+        transition: color $transition;
+
+        @include media($bp-mobile) {
+            font-size: 10px;
+        }
+
+        @include hover {
+            color: $color-black;
+        }
+
+        &--active {
+            border-bottom-color: $color-black;
+            font-weight: 600;
+            color: $color-black;
+        }
+    }
+}
+
+// Промо-карточки: фоны задаются картой тем
+
+$promo-themes: (
+    "light": $color-bg,
+    "gray": #eaeaea,
+    "silver": #e0e0e0,
+    "dark": $color-dark,
+);
+
+.promo {
+    padding: 80px 0;
+
+    @include media($bp-mobile) {
+        padding: 20px 0;
+    }
+
+    &__list {
+        @include flex;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+}
+
+.promo-card {
+    $block: &;
+
+    @include flex(column, center);
+    width: 25%;
+    min-width: 0;
+    min-height: 500px;
+    padding: 48px 28px;
+    text-align: center;
+
+    @include media($bp-desktop) {
+        padding: 36px 20px;
+    }
+
+    // На мобильных показывается одна карточка — слайдер появится в части Б
+    @include media($bp-mobile) {
+        display: none;
+        width: 100%;
+        min-height: auto;
+        padding: 24px $page-padding-mobile;
+
+        &--current {
+            display: flex;
+        }
+    }
+
+    @each $theme, $bg in $promo-themes {
+        &--#{$theme} {
+            @include theme($bg);
+
+            @if is-dark($bg) {
+                #{$block}__text {
+                    color: inherit;
+                }
+            }
+        }
+    }
+
+    &__img {
+        max-height: 260px;
+        margin-bottom: 30px;
+        object-fit: contain;
+
+        @include media($bp-desktop) {
+            max-height: 220px;
+        }
+
+        @include media($bp-mobile) {
+            max-height: 150px;
+            margin-bottom: 16px;
+        }
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        @include font(28px, 500);
+
+        @include media($bp-mobile) {
+            margin-bottom: 8px;
+            font-size: 21px;
+        }
+    }
+
+    &__text {
+        margin-bottom: 30px;
+        font-size: 14px;
+        color: $color-text-muted;
+
+        @include media($bp-mobile) {
+            margin-bottom: 16px;
+            font-size: 10px;
+        }
+    }
+
+    &__btn {
+        margin-top: auto;
+
+        @include media($bp-mobile) {
+            padding: 9px 24px;
+            font-size: 11px;
+        }
+    }
+}
+
+// Скидки
+
+.discounts {
+    padding: 100px 0;
+
+    @include media($bp-mobile) {
+        padding: 28px 0;
+    }
+
+    &__inner {
+        @extend %container;
+    }
+
+    &__title {
+        margin-bottom: 40px;
+
+        @include media($bp-mobile) {
+            margin-bottom: 16px;
+        }
+    }
+}
+
+// Летняя распродажа
+
+.sale {
+    padding: 100px 0;
+    background: $color-dark url("../img/sale-banner.png") center / cover no-repeat;
+    color: $color-white;
+    text-align: center;
+
+    @include media($bp-mobile) {
+        padding: 50px 0;
+    }
+
+    &__inner {
+        @extend %container;
+    }
+
+    &__title {
+        margin-bottom: 20px;
+        @include font(80px, 300, 1.1);
+
+        @include media($bp-mobile) {
+            margin-bottom: 10px;
+            font-size: 30px;
+        }
+
+        @include media($bp-small) {
+            font-size: 26px;
+        }
+    }
+
+    &__accent {
+        font-weight: 700;
+    }
+
+    &__text {
+        margin-bottom: 40px;
+        font-size: 18px;
+        color: $color-gray-light;
+
+        @include media($bp-mobile) {
+            margin-bottom: 18px;
+            font-size: 11px;
+        }
+    }
+
+    &__btn {
+        padding: 16px 50px;
+        font-size: 18px;
+
+        @include media($bp-mobile) {
+            padding: 9px 24px;
+            font-size: 11px;
+        }
+    }
+}

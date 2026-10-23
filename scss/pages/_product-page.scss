@@ -1,0 +1,626 @@
+@use "../base" as *;
+
+// Основной блок товара: галерея + информация
+
+.product-info {
+    padding: 40px 0 112px;
+
+    @include media($bp-tablet) {
+        padding-bottom: 56px;
+    }
+
+    @include media($bp-mobile) {
+        padding: 24px 0 40px;
+    }
+
+    &__inner {
+        @extend %content;
+        @include flex($align: center, $gap: 48px);
+
+        @include media($bp-desktop) {
+            gap: 32px;
+        }
+
+        @include media($bp-tablet) {
+            flex-direction: column;
+            align-items: stretch;
+        }
+    }
+
+    &__content {
+        @include flex(column, $gap: 24px);
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__head {
+        @include flex(column, $gap: 24px);
+
+        @include media($bp-mobile) {
+            gap: 16px;
+        }
+    }
+
+    &__title {
+        @include font(40px, 700, 40px);
+
+        @include media($bp-mobile) {
+            @include font(28px, $line-height: 32px);
+        }
+    }
+
+    &__prices {
+        @include flex($align: center, $gap: 16px);
+        letter-spacing: $tracking-wide;
+    }
+
+    &__price {
+        @include font(32px, 500, 48px);
+
+        @include media($bp-mobile) {
+            @include font(24px, $line-height: 32px);
+        }
+    }
+
+    &__old-price {
+        @include font(24px, 400, 32px);
+        color: $color-price-old;
+
+        @include media($bp-mobile) {
+            font-size: 18px;
+        }
+    }
+
+    &__description {
+        @include font(14px, 400, 24px);
+        letter-spacing: $tracking-wide;
+        color: $color-text-muted;
+    }
+
+    &__more {
+        color: $color-black;
+        text-decoration: underline;
+    }
+
+    &__actions {
+        @include flex($gap: 16px);
+        margin-top: 8px;
+
+        @include media($bp-small) {
+            flex-direction: column;
+        }
+    }
+
+    &__btn {
+        flex: 1;
+        padding: 16px;
+        border-radius: $radius-sm;
+        @include font(16px, 500, 24px);
+    }
+}
+
+// Галерея: превью слева, большое фото справа.
+// Переключение превью — интерактив части Б.
+
+.gallery {
+    @include flex($align: center, $gap: 48px);
+    flex-shrink: 0;
+
+    @include media($bp-desktop) {
+        gap: 24px;
+    }
+
+    @include media($bp-tablet) {
+        justify-content: center;
+    }
+
+    @include media($bp-mobile) {
+        flex-direction: column-reverse;
+        gap: 16px;
+    }
+
+    &__thumbs {
+        @include flex(column, $gap: 24px);
+
+        @include media($bp-mobile) {
+            flex-direction: row;
+            gap: 16px;
+        }
+    }
+
+    &__thumb {
+        @include flex($align: center, $justify: center);
+        @include size(75px, 93px);
+
+        @include media($bp-mobile) {
+            @include size(48px, 60px);
+        }
+
+        // неактивные миниатюры приглушены, выбранная — яркая
+        opacity: 0.45;
+        transition: opacity 0.2s;
+
+        &:hover,
+        &--active {
+            opacity: 1;
+        }
+    }
+
+    &__thumb-img {
+        max-height: 100%;
+        object-fit: contain;
+    }
+
+    &__main {
+        @include size(413px, 516px);
+        object-fit: contain;
+
+        @include media($bp-desktop) {
+            @include size(320px, 400px);
+        }
+
+        @include media($bp-mobile) {
+            @include size(100%, auto);
+            max-width: 280px;
+            aspect-ratio: 413 / 516;
+        }
+    }
+}
+
+// Выбор цвета
+
+.colors {
+    @include flex($align: center, $gap: 24px);
+
+    &__label {
+        @include font(15px, 400, 24px);
+        white-space: nowrap;
+        color: $color-dark;
+    }
+
+    &__list {
+        @include flex($gap: 8px);
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: block;
+        @include size(32px);
+        border-radius: 50%;
+        background-color: var(--color);
+
+        @include media($bp-mobile) {
+            @include size(24px);
+        }
+
+        &--active {
+            box-shadow: 0 0 0 2px $color-white, 0 0 0 3px $color-black;
+        }
+    }
+}
+
+// Выбор памяти
+
+.memory {
+    @include flex($gap: 16px);
+
+    @include media($bp-small) {
+        gap: 8px;
+    }
+
+    &__option {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__item {
+        width: 100%;
+        padding: 16px 8px;
+        border: 1px solid $color-border-field;
+        border-radius: $radius;
+        @include font(14px, 500, 16px);
+        color: $color-memory;
+        transition: border-color $transition, color $transition;
+
+        @include hover {
+            border-color: $color-memory;
+        }
+
+        &--active {
+            border-color: $color-black;
+            color: $color-black;
+        }
+
+        &:disabled {
+            border-color: $color-border-field;
+            color: $color-border-field;
+            cursor: default;
+        }
+    }
+}
+
+// Краткие характеристики
+
+.specs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+
+    @include media($bp-small) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    &__item {
+        @include flex($align: center, $gap: 8px);
+        min-height: 64px;
+        padding: 16px 8px;
+        border-radius: 7px;
+        background-color: $color-bg-spec;
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        @include size(24px);
+    }
+
+    &__text {
+        @include flex(column);
+        min-width: 0;
+        @include font(14px, 500, 16px);
+        color: $color-text-dark;
+    }
+
+    &__name {
+        font-weight: 400;
+        color: $color-spec-name;
+    }
+}
+
+// Доставка, наличие, гарантия
+
+.features {
+    @include flex($gap: 24px);
+
+    @include media($bp-small) {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    &__item {
+        @include flex($align: center, $gap: 16px);
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__icon-box {
+        @extend %icon-box;
+        @include size(56px);
+        border-radius: 11px;
+        background-color: $color-bg-card;
+    }
+
+    &__icon {
+        @include size(24px);
+    }
+
+    &__text {
+        @include flex(column);
+        @include font(14px, 500, 24px);
+        color: $color-feature;
+    }
+
+    &__value {
+        color: $color-black;
+    }
+}
+
+// Общий заголовок секций страницы товара
+
+.product-section-title {
+    @include font(24px, 500, 32px);
+
+    @include media($bp-mobile) {
+        @include font(20px, $line-height: 28px);
+    }
+}
+
+// Подробные характеристики
+
+.details {
+    padding: 80px 0;
+    background-color: $color-bg-light;
+
+    @include media($bp-mobile) {
+        padding: 40px 0;
+    }
+
+    &__inner {
+        @extend %content;
+    }
+
+    &__content {
+        @include flex(column, $gap: 32px);
+        padding: 48px 40px;
+        border-radius: $radius;
+        background-color: $color-white;
+
+        @include media($bp-mobile) {
+            gap: 24px;
+            padding: 32px 16px;
+        }
+    }
+
+    &__text {
+        @include font(14px, 500, 24px);
+        color: $color-details-text;
+    }
+
+    &__groups {
+        @include flex(column, $gap: 40px);
+    }
+
+    &__group {
+        @include flex(column, $gap: 16px);
+    }
+
+    &__subtitle {
+        @include font(20px, 500, 24px);
+    }
+
+    &__list {
+        @include flex(column, $gap: 24px);
+
+        @include media($bp-mobile) {
+            gap: 16px;
+        }
+    }
+
+    &__row {
+        @include flex($align: flex-start, $justify: space-between, $gap: 16px);
+        padding-bottom: 8px;
+        border-bottom: 0.5px solid $color-border-row;
+        line-height: 24px;
+    }
+
+    &__name {
+        font-size: 16px;
+
+        @include media($bp-mobile) {
+            font-size: 14px;
+        }
+    }
+
+    &__value {
+        font-size: 15px;
+        text-align: right;
+
+        @include media($bp-mobile) {
+            font-size: 14px;
+        }
+    }
+
+    &__more {
+        align-self: center;
+    }
+}
+
+// Отзывы
+
+.reviews {
+    padding: 88px 0;
+
+    @include media($bp-mobile) {
+        padding: 48px 0;
+    }
+
+    &__inner {
+        @extend %content;
+        @include flex(column, $gap: 48px);
+
+        @include media($bp-mobile) {
+            gap: 32px;
+        }
+    }
+
+    &__overall {
+        @include flex($align: center, $gap: 60px);
+
+        @include media($bp-mobile) {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 32px;
+        }
+    }
+
+    &__comment {
+        font-size: 14px;
+        @include field(64px, $color-border-comment, 7px, 16px);
+    }
+
+    &__list {
+        @include flex(column, $gap: 24px);
+    }
+
+    &__more {
+        align-self: center;
+        margin-top: -24px;
+
+        @include media($bp-mobile) {
+            margin-top: -8px;
+        }
+    }
+}
+
+.rating {
+    @include flex(column, center, $gap: 16px);
+    flex-shrink: 0;
+    padding: 32px;
+    border-radius: 25px;
+    background-color: $color-bg-light;
+    text-align: center;
+
+    @include media($bp-mobile) {
+        align-self: center;
+    }
+
+    &__score {
+        @include font(56px, 500, 56px);
+    }
+
+    &__count {
+        @include font(15px, 500, 16px);
+        color: $color-text-light;
+    }
+
+    &__stars {
+        @include size(120px, 24px);
+    }
+}
+
+.rating-bars {
+    @include flex(column, $gap: 24px);
+    flex: 1;
+
+    @include media($bp-mobile) {
+        gap: 16px;
+    }
+
+    &__item {
+        @include flex($align: center, $gap: 16px);
+
+        @include media($bp-small) {
+            gap: 8px;
+        }
+    }
+
+    &__label {
+        flex-shrink: 0;
+        width: 150px;
+        @include font(18px, 500, 16px);
+
+        @include media($bp-mobile) {
+            width: 120px;
+            font-size: 16px;
+        }
+
+        @include media($bp-small) {
+            width: 100px;
+            font-size: 14px;
+        }
+    }
+
+    &__track {
+        flex: 1;
+        height: 5px;
+        overflow: hidden;
+        border-radius: $radius-xl;
+        background-color: $color-track;
+    }
+
+    &__fill {
+        display: block;
+        width: var(--fill);
+        height: 100%;
+        border-radius: inherit;
+        background-color: $color-stars;
+    }
+
+    &__count {
+        width: 30px;
+        @include font(16px, 500, 16px);
+        text-align: right;
+        color: $color-text-light;
+    }
+}
+
+.review {
+    @include flex($align: flex-start, $gap: 20px);
+    padding: 24px 28px 24px 16px;
+    border-radius: $radius-md;
+    background-color: $color-bg-light;
+
+    @include media($bp-small) {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    &__avatar {
+        flex-shrink: 0;
+        @include size(56px);
+        border-radius: 50%;
+
+        @include media($bp-mobile) {
+            @include size(40px);
+        }
+    }
+
+    &__content {
+        @include flex(column, $gap: 8px);
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__head {
+        @include flex($align: flex-start, $justify: space-between, $gap: 16px);
+    }
+
+    &__author {
+        @include font(17px, 700, 24px);
+    }
+
+    &__date {
+        @include font(14px, 500, 16px);
+        white-space: nowrap;
+        color: $color-gray-light;
+
+        @include media($bp-small) {
+            display: none;
+        }
+    }
+
+    &__stars {
+        @include size(120px, 24px);
+        object-fit: contain;
+        object-position: left;
+    }
+
+    &__text {
+        @include font(15px, 500, 24px);
+        color: $color-review-text;
+
+        @include media($bp-mobile) {
+            @include font(14px, $line-height: 22px);
+        }
+    }
+
+    &__photos {
+        @include flex($gap: 8px);
+        flex-wrap: wrap;
+    }
+
+    &__photo {
+        @include size(118px, 88px);
+        border-radius: $radius-sm;
+        object-fit: cover;
+    }
+}
+
+// Похожие товары
+
+.related {
+    padding: 80px 0;
+
+    @include media($bp-mobile) {
+        padding: 40px 0;
+    }
+
+    &__inner {
+        @extend %content;
+        @include flex(column, $gap: 32px);
+
+        @include media($bp-mobile) {
+            gap: 16px;
+        }
+    }
+}

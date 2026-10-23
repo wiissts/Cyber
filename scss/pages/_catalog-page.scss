@@ -1,0 +1,250 @@
+@use "../base" as *;
+
+.catalog {
+    padding-bottom: 60px;
+
+    @include media($bp-mobile) {
+        padding: 10px 0 30px;
+    }
+
+    &__inner {
+        @extend %content;
+        @include flex($align: flex-start, $gap: 30px);
+
+        @include media($bp-tablet) {
+            gap: 20px;
+        }
+    }
+
+    &__filters {
+        flex-shrink: 0;
+        width: 250px;
+
+        @include media($bp-tablet) {
+            width: 220px;
+        }
+
+        @include media($bp-mobile) {
+            display: none;
+        }
+    }
+
+    &__content {
+        flex: 1;
+        min-width: 0;
+    }
+
+    &__toolbar {
+        @include flex($align: center, $justify: space-between, $gap: 10px);
+        margin-bottom: 20px;
+
+        @include media($bp-mobile) {
+            margin-bottom: 15px;
+        }
+
+        // Кнопка фильтров и сортировка над списком — только на мобильных
+        &--mobile {
+            display: none;
+
+            @include media($bp-mobile) {
+                display: flex;
+            }
+        }
+    }
+
+    &__count {
+        font-size: 14px;
+        color: $color-text-muted;
+
+        @include media($bp-mobile) {
+            color: $color-gray;
+        }
+    }
+
+    &__count-value {
+        font-weight: 700;
+        color: $color-dark;
+    }
+
+    &__sort {
+        @include media($bp-mobile) {
+            display: none;
+        }
+    }
+
+    &__list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+
+        @include media($bp-tablet) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 15px;
+        }
+
+        @include media($bp-mobile) {
+            gap: 10px;
+        }
+    }
+
+    &__pagination {
+        margin-top: 40px;
+
+        @include media($bp-mobile) {
+            margin-top: 25px;
+        }
+    }
+}
+
+// Фильтры
+
+.filter {
+    $block: &;
+
+    margin-bottom: 15px;
+    padding: 20px;
+    border-radius: $radius-lg;
+    background-color: $color-bg;
+
+    &__head {
+        @include flex($align: center, $justify: space-between);
+        width: 100%;
+        @include font(15px, 600);
+
+        // Стрелка смотрит вниз у свёрнутого фильтра и вверх у раскрытого
+        &::after {
+            content: "▼";
+            font-size: 10px;
+            color: $color-gray;
+            transition: transform $transition;
+        }
+    }
+
+    &__body {
+        display: none;
+    }
+
+    &--open {
+        #{$block}__head::after {
+            transform: rotate(180deg);
+        }
+
+        #{$block}__body {
+            display: block;
+        }
+    }
+
+    &__search {
+        margin-top: 15px;
+        padding: 8px 12px;
+        background-color: $color-white;
+    }
+
+    &__list {
+        @include flex(column, $gap: 10px);
+        margin-top: 15px;
+    }
+}
+
+.checkbox {
+    @include flex($align: center, $gap: 8px);
+    font-size: 14px;
+    cursor: pointer;
+
+    &__input {
+        flex-shrink: 0;
+        @include size(16px);
+        accent-color: $color-black;
+        cursor: pointer;
+    }
+
+    &__count {
+        margin-left: auto;
+        font-size: 12px;
+        color: $color-gray;
+    }
+}
+
+// Сортировка и кнопка фильтров
+
+.select {
+    padding: 10px 15px;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    background-color: $color-white;
+    font-size: 14px;
+    cursor: pointer;
+
+    @include media($bp-mobile) {
+        flex: 1;
+        padding: 12px 16px;
+    }
+
+    @include media($bp-small) {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+.filters-btn {
+    @include flex($align: center, $justify: space-between);
+    flex: 1;
+    padding: 12px 16px;
+    border: 1px solid $color-border;
+    border-radius: $radius;
+    background-color: $color-white;
+    @include font(14px, 500);
+    color: $color-dark;
+
+    @include media($bp-small) {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+}
+
+// Пагинация (переключение страниц появится в части Б)
+
+.pagination {
+    @include flex($align: center, $justify: center, $gap: 10px);
+
+    @include media($bp-mobile) {
+        gap: 4px;
+    }
+
+    &__btn {
+        @include size(36px);
+        border-radius: $radius-sm;
+        font-size: 14px;
+        color: $color-dark;
+        transition: background-color $transition;
+
+        @include media($bp-mobile) {
+            @include size(30px);
+            font-size: 13px;
+        }
+
+        @include hover {
+            background-color: $color-border;
+        }
+
+        &--active {
+            @include theme($color-dark);
+
+            @include hover {
+                background-color: $color-dark;
+            }
+        }
+
+        &--arrow {
+            font-size: 18px;
+
+            &:disabled {
+                opacity: 0.3;
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__dots {
+        color: $color-gray;
+    }
+}

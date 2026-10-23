@@ -1,0 +1,138 @@
+@use "../base" as *;
+
+// Вложенные блоки идут раньше .header, чтобы правила миксов (.header__search и т.п.) их переопределяли
+
+.search {
+    @include flex($align: center, $gap: 10px);
+    padding: 8px 16px;
+    border-radius: $radius;
+    background-color: $color-bg-search;
+
+    &__btn {
+        display: flex;
+    }
+
+    &__icon {
+        @include size(18px);
+        opacity: 0.6;
+    }
+
+    &__input {
+        width: 100%;
+        min-width: 0;
+        border: none;
+        outline: none;
+        background: transparent;
+        font-size: 14px;
+        color: $color-text;
+    }
+}
+
+.menu {
+    &__list {
+        @include flex($gap: 40px);
+
+        @include media($bp-desktop) {
+            gap: 16px;
+        }
+    }
+
+    &__link {
+        @include font(16px, 500);
+        color: $color-text;
+        transition: color $transition;
+
+        @include media($bp-desktop) {
+            font-size: 14px;
+        }
+
+        @include hover {
+            color: $color-black;
+        }
+
+        &--active {
+            color: $color-black;
+        }
+    }
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+
+    @include media($bp-mobile) {
+        display: flex;
+    }
+
+    &__line {
+        @include size(24px, 2px);
+        background-color: $color-black;
+    }
+}
+
+.header {
+    padding: 20px 0;
+    border-bottom: 1px solid $color-border;
+    background-color: $color-white;
+
+    @include media($bp-mobile) {
+        padding: 8px 0;
+    }
+
+    &__inner {
+        @extend %container;
+        @include flex($align: center, $justify: space-between, $gap: 40px);
+
+        @include media($bp-desktop) {
+            gap: 20px;
+        }
+    }
+
+    &__logo {
+        flex-shrink: 0;
+        @include font(28px, 700);
+        letter-spacing: -0.5px;
+
+        @include media($bp-mobile) {
+            font-size: 16px;
+        }
+    }
+
+    &__search {
+        flex: 1;
+        max-width: 500px;
+        min-width: 150px;
+    }
+
+    &__actions {
+        @include flex($align: center, $gap: 24px);
+
+        @include media($bp-desktop) {
+            gap: 12px;
+        }
+    }
+
+    &__action {
+        opacity: 0.8;
+        transition: opacity $transition;
+
+        @include hover {
+            opacity: 1;
+        }
+    }
+
+    &__icon {
+        @include size(24px);
+        object-fit: contain;
+    }
+
+    // На мобильных вместо поиска, меню и иконок — бургер
+    &__search,
+    &__menu,
+    &__actions {
+        @include media($bp-mobile) {
+            display: none;
+        }
+    }
+}
